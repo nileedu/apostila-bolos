@@ -206,7 +206,6 @@ Toda IA que atuar neste projeto deve:
 ---
 
 ## 🧠 LIÇÕES APRENDIDAS
-- NUNCA sobrescrever conteúdo existente sem gerar um backup local na pasta `_backup/`.
 - Sem documentação, a IA perde contexto rápido
 - Estrutura fixa acelera replicação para novos nichos
 - Mobile-first não é opcional
@@ -268,16 +267,3 @@ Sempre que mexer neste projeto:
 7. publique no Git
 
 Este arquivo é a fonte da verdade do projeto.
-
----
-
-## 🛡️ POLÍTICA DE PRESERVAÇÃO E RECUPERAÇÃO
-
-### Regra 1: Backup Antes de Alterar
-Jamais apague, sobrescreva ou substitua qualquer arquivo sem criar um backup local prévio na pasta `_backup/` com timestamp (ex: `_backup/2026-04-16_XX-XX/`). Copie todos os arquivos que serão afetados antes da operação.
-
-### Regra 2: Resgate Seguro (Não-Destrutivo)
-Se houver perda de dados, a IA deve inspecionar exaustivamente `git reflog`, `git log --all` e arquivos não rastreados. O resgate deve ser feito de forma isolada, extraindo a árvore (ex: via `git worktree add`) para uma pasta `_recovered/`, sem sobrescrever arquivos locais imediatamente.
-
-### Regra 3: Geração de Relatórios
-Toda operação de resgate gera um documento de auditoria listando o que foi achado, recuperado, perdido e recomendação de próximos passos, exigindo confirmação humana antes do merge final.
