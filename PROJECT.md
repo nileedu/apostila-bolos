@@ -276,6 +276,9 @@ Este arquivo é a fonte da verdade do projeto.
 ### Regra 1: Backup Antes de Alterar
 Jamais apague, sobrescreva ou substitua qualquer arquivo sem criar um backup local prévio na pasta `_backup/` com timestamp (ex: `_backup/2026-04-16_XX-XX/`). Copie todos os arquivos que serão afetados antes da operação.
 
+### Regra 4: Exclusão Zero e Pasta de Revisão
+É terminantemente PROIBIDO deletar arquivos permanentemente. Qualquer arquivo considerado obsoleto ou que precise ser removido da estrutura principal deve ser movido para uma pasta de revisão chamada `_review/TIMESTAMP/` para que o usuário possa validar e decidir o destino final.
+
 ### Regra 2: Resgate Seguro (Não-Destrutivo)
 Se houver perda de dados, a IA deve inspecionar exaustivamente `git reflog`, `git log --all` e arquivos não rastreados. O resgate deve ser feito de forma isolada, extraindo a árvore (ex: via `git worktree add`) para uma pasta `_recovered/`, sem sobrescrever arquivos locais imediatamente.
 

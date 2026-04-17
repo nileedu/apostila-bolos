@@ -1,11 +1,29 @@
+# Saneamento de Repositório - Apostila Bolos
+
+# Pastas de Backup e Quarentena
+_backup/
+_quarentena_repo/
+_recovered/
+_review/
+
+# Dependências e Ambiente
 node_modules/
-dist/
-build/
-coverage/
+%APPDATA%/
+npm/
 .env
 .env.*
 *.log
-.DS_Store
+
+# Arquivos de Sistema
 Thumbs.db
+.DS_Store
+*.tmp
+*.bak
+
+# Build/Export
+exports/
+*.html.bak
+
+# Configurações de IDE
 .vscode/
 .idea/
