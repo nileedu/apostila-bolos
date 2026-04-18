@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila Fatias de Bolos — Matheus Araújo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F7F2; --bg-alt:#F2EDE4;
+  --primary:#5D4037; --primary-dark:#3E2723;
+  --gold:#A67C00; --gold-light:#D4AF37;
+  --rose:#BCAAA4; --rose-light:#E0E0E0;
+  --dark:#212121; --text:#424242; --text-light:#757575;
+  --white:#FFFFFF;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --r:4px; --rl:10px; --rp:0px;
+}
+.sec{padding:120px 24px}
+.stitle{letter-spacing:0.05em; text-transform:uppercase}
+.btnp{border:1px solid var(--gold); background:transparent; color:var(--gold); box-shadow:none}
+.btnp:hover{background:var(--gold); color:var(--white)}
+
+/* ── TICKER ── */
+.ticker{background:var(--dark);color:var(--gold-light);padding:0;overflow:hidden;position:relative;border-bottom:1px solid rgba(200,148,31,.18);width:100%}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(to right,var(--dark),transparent)}
+.ticker::after{right:0;background:linear-gradient(to left,var(--dark),transparent)}
+.ticker-inner{padding:12px 0;display:flex;overflow:hidden}
+.ticker-track{display:flex;flex-wrap:nowrap;white-space:nowrap;width:max-content;animation:marquee 110s linear infinite;will-change:transform}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.ti{display:flex;align-items:center;gap:12px;padding:0 40px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
+.ti:hover{color:var(--white)}
+.td{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:pulse-dot 2s ease-in-out infinite}
+.td:nth-child(1){animation-delay:0s}
+@keyframes pulse-dot{0%,100%{transform:scale(1);opacity:1;box-shadow:0 0 0 0 rgba(200,148,31,.7)}50%{transform:scale(1.4);opacity:1;box-shadow:0 0 0 4px rgba(200,148,31,0)}}
+
+/* ── STICKY CTA ── */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:var(--dark);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:999;transform:translateY(110%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 -4px 24px rgba(44,24,16,.35)}
+.sticky.on{transform:translateY(0)}
+.sticky-txt{color:var(--white);font-size:13px}
+.sticky-txt strong{color:var(--gold-light);font-weight:600}
+.sbtn{background:var(--gold);color:var(--white);font-size:14px;font-weight:600;padding:10px 24px;border-radius:var(--rp);white-space:nowrap;transition:background .2s,transform .15s;display:inline-block}
+.sbtn:hover{background:var(--primary);transform:translateY(-1px)}
+@media(max-width:480px){.sticky{flex-direction:column;text-align:center;padding:16px;gap:8px}}
+
+/* ── NAV ── */
+.nav{background:var(--bg);border-bottom:1px solid rgba(139,94,60,.1);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:90;backdrop-filter:blur(8px)}
+.nav-logo{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--primary);letter-spacing:.01em}
+.ncta{background:var(--primary);color:var(--white);font-size:13px;font-weight:600;padding:8px 20px;border-radius:var(--rp);transition:background .2s;display:inline-block}
+.ncta:hover{background:var(--primary-dark)}
+
+/* ── HERO ── */
+.hero{background:var(--dark);position:relative;overflow:hidden;padding:88px 24px 108px;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(200,148,31,.14) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,rgba(212,132,122,.1) 0%,transparent 50%);pointer-events:none}
+.eyebrow{display:inline-block;background:rgba(200,148,31,.14);border:1px solid rgba(200,148,31,.38);color:var(--gold-light);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--rp);margin-bottom:28px}
+.htitle{font-family:var(--serif);font-size:clamp(38px,7vw,72px);font-weight:600;color:var(--white);line-height:1.1;letter-spacing:-.01em;max-width:820px;margin:0 auto 20px}
+.htitle em{font-style:italic;color:var(--gold-light)}
+.hsub{font-size:clamp(15px,2.5vw,19px);font-weight:300;color:rgba(253,246,238,.72);max-width:540px;margin:0 auto 48px;line-height:1.65}
+.cta-grp{display:flex;flex-direction:column;align-items:center;gap:16px}
+.btnp{background:var(--gold);color:var(--white);font-size:16px;font-weight:600;padding:18px 48px;border-radius:var(--rp);display:inline-block;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 24px rgba(200,148,31,.35)}
+.btnp:hover{background:#b8831a;transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,148,31,.45)}
+.phint{font-size:13px;color:rgba(253,246,238,.48)}
+.phint del{color:rgba(253,246,238,.3)}
+.phint strong{color:var(--gold-light);font-weight:600}
+.hstats{display:flex;justify-content:center;gap:40px;margin-top:60px;padding-top:48px;border-top:1px solid rgba(253,246,238,.1);flex-wrap:wrap}
+.hstat-n{font-family:var(--serif);font-size:36px;font-weight:600;color:var(--gold-light);line-height:1;display:block}
+.hstat-l{font-size:11px;color:rgba(253,246,238,.45);letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:4px}
+@media(max-width:768px){.hero{padding:64px 20px 80px}.hstats{gap:24px;margin-top:40px;padding-top:36px}.hstat-n{font-size:28px}}
+
+/* ── GALLERY ── */
+.gallery{background:var(--dark);padding:64px 0;overflow:hidden}
+.gal-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,246,238,.32);margin-bottom:32px;padding:0 24px}
+.gal-track{display:flex;gap:16px;padding:0 24px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;justify-content:center;flex-wrap:wrap}
+.gal-track::-webkit-scrollbar{display:none}
+.gcard{flex:0 0 auto;width:228px;height:288px;border-radius:var(--rl);overflow:hidden;position:relative;background:#2C1810}
+.gcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .5s ease}
+.gcard:hover img{transform:scale(1.06)}
+.gcard-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.1) 55%,transparent 100%);z-index:1}
+.gcard-t{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--white);line-height:1.3}
+.gcard-s{font-size:11px;color:rgba(253,246,238,.65);margin-top:4px;letter-spacing:.04em}
+@media(max-width:600px){.gcard{width:196px;height:252px}.gal-track{justify-content:center}}
+
+/* ── COMMON ── */
+.sec{padding:80px 24px}
+.sec-alt{background:var(--bg-alt)}
+.ctr{max-width:1060px;margin:0 auto}
+.tag{display:inline-block;background:rgba(139,94,60,.1);color:var(--primary);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:var(--rp);margin-bottom:16px}
+.stitle{font-family:var(--serif);font-size:clamp(28px,5vw,48px);font-weight:600;color:var(--dark);line-height:1.2;letter-spacing:-.01em;margin-bottom:14px}
+.stitle em{font-style:italic;color:var(--primary)}
+.ssub{font-size:17px;font-weight:300;color:var(--text-light);line-height:1.6;max-width:560px}
+.fade{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+@media(max-width:768px){.sec{padding:60px 20px}}
+
+/* ── FOR WHOM ── */
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:48px}
+.fw-card{background:var(--white);border:1px solid rgba(139,94,60,.1);border-radius:var(--rl);padding:28px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow .2s,transform .2s}
+.fw-card:hover{box-shadow:0 8px 32px rgba(44,24,16,.07);transform:translateY(-2px)}
+.fw-chk{width:28px;height:28px;border-radius:50%;background:rgba(139,94,60,.1);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700}
+.fw-txt{font-size:15px;color:var(--text);line-height:1.55}
+
+/* ── MODULES ── */
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px}
+.mcard{background:var(--white);border-radius:var(--rl);overflow:hidden;border:1px solid rgba(139,94,60,.1);transition:box-shadow .2s,transform .2s}
+.mcard:hover{box-shadow:0 12px 40px rgba(44,24,16,.09);transform:translateY(-3px)}
+.mhdr{background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:24px;display:flex;align-items:center;gap:12px}
+.mhdr.gold{background:linear-gradient(135deg,var(--gold),#a07010)}
+.mnum{font-family:var(--serif);font-size:42px;font-weight:700;color:rgba(255,255,255,.18);line-height:1}
+.mtitle{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--white);line-height:1.3}
+.mbody{padding:24px}
+.mdesc{font-size:14px;color:var(--text-light);line-height:1.6;margin-bottom:16px}
+.mtopics{list-style:none;display:flex;flex-direction:column;gap:8px}
+.mtopic{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text);line-height:1.45}
+.mtopic::before{content:'◆';color:var(--gold);font-size:8px;flex-shrink:0;margin-top:4px}
+
+/* ── BONUS ── */
+.bonus-sec{background:var(--dark);position:relative;overflow:hidden}
+.bonus-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 100% 0%,rgba(200,148,31,.1) 0%,transparent 60%);pointer-events:none}
+.bonus-sec .tag{background:rgba(200,148,31,.15);color:var(--gold-light)}
+.bonus-sec .stitle{color:var(--white)}
+.bonus-sec .stitle em{color:var(--gold-light)}
+.bonus-sec .ssub{color:rgba(253,246,238,.5)}
+.b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px}
+.bcard{background:rgba(255,255,255,.05);border:1px solid rgba(200,148,31,.2);border-radius:var(--rl);padding:32px 28px;transition:background .2s,border-color .2s}
+.bcard:hover{background:rgba(255,255,255,.08);border-color:rgba(200,148,31,.4)}
+.bbadge{display:inline-block;background:var(--gold);color:var(--white);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:16px}
+.btitle{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--white);line-height:1.3;margin-bottom:10px}
+.bdesc{font-size:14px;color:rgba(253,246,238,.55);line-height:1.65}
+.bval{margin-top:20px;font-size:13px;color:var(--gold-light);font-weight:500}
+.bval del{color:rgba(253,246,238,.28);margin-right:6px}
+
+/* ── TESTIMONIALS CAROUSEL ── */
+.t-carousel-wrap{margin-top:48px;position:relative}
+.t-carousel{overflow:hidden;border-radius:var(--rl)}
+.t-track{display:flex;transition:transform .45s cubic-bezier(.25,.46,.45,.94);will-change:transform;cursor:grab}
+.t-track.dragging{transition:none;cursor:grabbing}
+.tcard{flex:0 0 100%;background:var(--white);border:1px solid rgba(139,94,60,.1);border-radius:var(--rl);padding:32px 36px;box-sizing:border-box;user-select:none}
+@media(min-width:700px){.tcard{flex:0 0 calc(50% - 10px);margin-right:20px}}
+@media(min-width:1024px){.tcard{flex:0 0 calc(33.333% - 14px);margin-right:20px}}
+.t-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px}
+.t-arrow{width:40px;height:40px;border-radius:50%;border:1px solid rgba(139,94,60,.2);background:var(--white);color:var(--primary);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,transform .15s;flex-shrink:0}
+.t-arrow:hover{background:var(--primary);border-color:var(--primary);color:var(--white);transform:scale(1.08)}
+.t-arrow:disabled{opacity:.3;cursor:not-allowed;transform:none}
+.t-dots{display:flex;gap:6px;align-items:center}
+.t-dot{width:8px;height:8px;border-radius:50%;background:rgba(139,94,60,.2);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s}
+.t-dot.active{background:var(--primary);transform:scale(1.3)}
+.tq{font-size:34px;color:var(--rose-light);line-height:1;font-family:Georgia,serif;margin-bottom:10px}
+.ttxt{font-size:15px;color:var(--text);line-height:1.65;margin-bottom:20px;font-style:italic}
+.tstars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:14px}
+.tauthor{display:flex;align-items:center;gap:12px}
+.tav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--rose-light),var(--rose));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--white);flex-shrink:0}
+.tname{font-size:14px;font-weight:600;color:var(--dark)}
+.trole{font-size:12px;color:var(--text-light);margin-top:2px}
+
+/* ── PRICING ── */
+.price-sec{background:var(--dark);text-align:center}
+.price-sec .tag{background:rgba(200,148,31,.15);color:var(--gold-light)}
+.price-sec .stitle{color:var(--white);max-width:580px;margin-left:auto;margin-right:auto}
+.price-sec .stitle em{color:var(--gold-light)}
+.pcard{background:rgba(255,255,255,.06);border:2px solid rgba(200,148,31,.35);border-radius:24px;max-width:480px;margin:48px auto 0;padding:48px 40px;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(200,148,31,.09) 0%,transparent 60%);pointer-events:none}
+.pbadge{display:inline-block;background:var(--gold);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:var(--rp);margin-bottom:28px}
+.porig{font-size:16px;color:rgba(253,246,238,.38);text-decoration:line-through;margin-bottom:4px}
+.pprice{font-family:var(--serif);font-size:clamp(52px,10vw,80px);font-weight:700;color:var(--white);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.pprice sup{font-size:.35em;vertical-align:top;margin-top:12px;display:inline-block;font-family:var(--sans);font-weight:400;color:rgba(253,246,238,.55)}
+.pinst{font-size:14px;color:rgba(253,246,238,.45);margin-bottom:32px}
+.pfeats{list-style:none;text-align:left;margin-bottom:36px;display:flex;flex-direction:column;gap:12px}
+.pfeat{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:rgba(253,246,238,.78);line-height:1.45}
+.pchk{width:20px;height:20px;border-radius:50%;background:rgba(200,148,31,.2);border:1px solid rgba(200,148,31,.4);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;margin-top:1px}
+.pbtn{display:block;background:var(--gold);color:var(--white);font-size:17px;font-weight:700;padding:20px 40px;border-radius:var(--rp);text-align:center;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 24px rgba(200,148,31,.4);letter-spacing:.02em;text-transform:uppercase}
+.pbtn:hover{background:#b8831a;transform:translateY(-2px);box-shadow:0 8px 36px rgba(200,148,31,.5)}
+.guar{margin-top:28px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;color:rgba(253,246,238,.45)}
+.guar-ico{width:36px;height:36px;border-radius:50%;border:1px solid rgba(200,148,31,.3);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+@media(max-width:600px){.pcard{padding:32px 22px}}
+
+/* ── EXPERT ── */
+.exp-layout{display:grid;grid-template-columns:280px 1fr;gap:60px;align-items:center;margin-top:48px}
+.exp-photo{aspect-ratio:3/4;background:linear-gradient(160deg,var(--bg-alt),var(--rose-light));border-radius:var(--rl);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.exp-photo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(139,94,60,.1),transparent)}
+.exp-name{font-family:var(--serif);font-size:36px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.exp-role{font-size:13px;font-weight:500;color:var(--primary);letter-spacing:.07em;text-transform:uppercase;margin-bottom:24px}
+.exp-bio{font-size:16px;color:var(--text-light);line-height:1.75;margin-bottom:28px}
+.exp-creds{display:flex;flex-direction:column;gap:12px}
+.exp-cred{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text)}
+.exp-cred-ico{color:var(--gold);font-size:14px;flex-shrink:0;margin-top:2px}
+@media(max-width:768px){.exp-layout{grid-template-columns:1fr;gap:32px}.exp-photo{max-width:200px;margin:0 auto}}
+
+/* ── FAQ ── */
+.faq-wrap{margin-top:48px;max-width:720px;margin-left:auto;margin-right:auto}
+.fi{border-bottom:1px solid rgba(139,94,60,.11)}
+.fi:first-child{border-top:1px solid rgba(139,94,60,.11)}
+.fq{width:100%;background:none;border:none;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:16px;font-weight:500;color:var(--dark);line-height:1.4;transition:color .2s}
+.fq:hover{color:var(--primary)}
+.fchev{width:24px;height:24px;border-radius:50%;background:rgba(139,94,60,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:var(--primary);transition:transform .3s,background .2s}
+.fi.open .fchev{transform:rotate(180deg);background:var(--primary);color:var(--white)}
+.fa{overflow:hidden;max-height:0;transition:max-height .35s ease,padding .3s ease;padding:0}
+.fi.open .fa{max-height:200px;padding-bottom:24px}
+.fa-inner{font-size:15px;color:var(--text-light);line-height:1.7}
+
+/* ── FOOTER ── */
+.footer{background:var(--dark);padding:48px 24px 32px;text-align:center}
+.flogo{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--gold-light);margin-bottom:16px}
+.ftag{font-size:13px;color:rgba(253,246,238,.35);margin-bottom:28px;max-width:380px;margin-left:auto;margin-right:auto}
+.flinks{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.flink{font-size:12px;color:rgba(253,246,238,.35);transition:color .2s;letter-spacing:.04em}
+.flink:hover{color:rgba(253,246,238,.7)}
+hr.fdiv{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:22px}
+.fcopy{font-size:12px;color:rgba(253,246,238,.28);line-height:1.65}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" role="marquee" aria-label="Promoção por tempo limitado">
+  <div class="ticker-inner">
+    <div class="ticker-track">
+      <span class="ti"><span class="td"></span>🔥 PROMOÇÃO POR TEMPO LIMITADO</span>
+      <span class="ti"><span class="td"></span>💰 DE R$&nbsp;97,00 POR APENAS R$&nbsp;39,90</span>
+      <span class="ti"><span class="td"></span>⚡ ACESSO IMEDIATO APÓS PAGAMENTO</span>
+      <span class="ti"><span class="td"></span>🛡 7 DIAS DE GARANTIA INCONDICIONAL</span>
+      <span class="ti"><span class="td"></span>🎂 +1.000 ALUNAS JÁ TRANSFORMARAM O NEGÓCIO</span>
+      <span class="ti"><span class="td"></span>✅ DOIS BÔNUS EXCLUSIVOS INCLUSOS</span>
+      <span class="ti"><span class="td"></span>📱 ACESSO VITALÍCIO NO CELULAR OU PC</span>
+      <span class="ti"><span class="td"></span>🚀 RECEITAS TESTADAS E APROVADAS</span>
+      <span class="ti"><span class="td"></span>🍰 APRENDA A MASSA AMANTEIGADA PERFEITA</span>
+      <span class="ti"><span class="td"></span>💎 TÉCNICAS PROFISSIONAIS DE CONFEITARIA</span>
+      <span class="ti"><span class="td"></span>🔥 PROMOÇÃO POR TEMPO LIMITADO</span>
+      <span class="ti"><span class="td"></span>💰 DE R$&nbsp;97,00 POR APENAS R$&nbsp;39,90</span>
+      <span class="ti"><span class="td"></span>⚡ ACESSO IMEDIATO APÓS PAGAMENTO</span>
+      <span class="ti"><span class="td"></span>🛡 7 DIAS DE GARANTIA INCONDICIONAL</span>
+      <span class="ti"><span class="td"></span>🎂 +1.000 ALUNAS JÁ TRANSFORMARAM O NEGÓCIO</span>
+      <span class="ti"><span class="td"></span>✅ DOIS BÔNUS EXCLUSIVOS INCLUSOS</span>
+      <span class="ti"><span class="td"></span>📱 ACESSO VITALÍCIO NO CELULAR OU PC</span>
+      <span class="ti"><span class="td"></span>🚀 RECEITAS TESTADAS E APROVADAS</span>
+      <span class="ti"><span class="td"></span>🍰 APRENDA A MASSA AMANTEIGADA PERFEITA</span>
+      <span class="ti"><span class="td"></span>💎 TÉCNICAS PROFISSIONAIS DE CONFEITARIA</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navegação principal">
+  <div class="nav-logo">Apostila Fatias de Bolos</div>
+  <a href="#checkout" class="ncta">Quero Agora →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="eyebrow">Para Confeiteiras que Vendem pelo Delivery</div>
+  <h1 class="htitle">Descubra como se <em>destacar</em><br>na confeitaria</h1>
+  <p class="hsub">Com receitas testadas e aprovadas por milhares de alunas — massa amanteigada, recheios que encantam e técnicas que vendem.</p>
+  <div class="cta-grp">
+    <a href="#checkout" class="btnp">Garantir Meu Acesso por R$&nbsp;39,90</a>
+    <p class="phint"><del>De R$&nbsp;97,00</del> &nbsp;·&nbsp; <strong>Só R$&nbsp;39,90</strong> no pagamento único</p>
+  </div>
+  <div class="hstats">
+    <div><span class="hstat-n">+1.000</span><span class="hstat-l">Alunas Formadas</span></div>
+    <div><span class="hstat-n">10 anos</span><span class="hstat-l">de Experiência</span></div>
+    <div><span class="hstat-n">100%</span><span class="hstat-l">Online &amp; Vitalício</span></div>
+    <div><span class="hstat-n">7 dias</span><span class="hstat-l">Garantia Total</span></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <p class="gal-label">O que você vai dominar</p>
+  <div class="gal-track">
+    <div class="gcard fade">
+      <img src="./ativos/imagens/hero-fatia-bolo.png" alt="Massa Amanteigada">
+      <div class="gcard-in"><div class="gcard-t">Massa Amanteigada Perfeita</div><div class="gcard-s">Módulo 1</div></div>
+    </div>
+    <div class="gcard fade">
+      <img src="./ativos/imagens/detalhe-massa.png" alt="Recheio Estruturado">
+      <div class="gcard-in"><div class="gcard-t">Recheio Estruturado</div><div class="gcard-s">Módulo 2</div></div>
+    </div>
+    <div class="gcard fade">
+      <img src="./ativos/imagens/fatia-ninho.png" alt="Cardápio Irresistível">
+      <div class="gcard-in"><div class="gcard-t">Cardápio Irresistível</div><div class="gcard-s">Vendas</div></div>
+    </div>
+    <div class="gcard fade">
+      <img src="./ativos/imagens/bonus-planilha.png" alt="Fotos que Vendem">
+      <div class="gcard-in"><div class="gcard-t">Fotos que Vendem</div><div class="gcard-s">Marketing</div></div>
+    </div>
+    <div class="gcard fade">
+      <img src="./ativos/imagens/fatia-morango.png" alt="Estratégia de Delivery">
+      <div class="gcard-in"><div class="gcard-t">Estratégia de Delivery</div><div class="gcard-s">Logística</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOR WHOM -->
+<section class="sec" id="para-quem">
+  <div class="ctr">
+    <div class="fade">
+      <span class="tag">Para Quem É</span>
+      <h2 class="stitle">Esta apostila foi criada <em>para você</em> se...</h2>
+      <p class="ssub">Reconhece alguma dessas situações?</p>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-card fade"><div class="fw-chk" aria-hidden="true">✓</div><p class="fw-txt">Você quer começar a vender seus bolos pelo delivery mas não sabe por onde começar.</p></div>
+      <div class="fw-card fade"><div class="fw-chk" aria-hidden="true">✓</div><p class="fw-txt">Você já faz bolos mas quer receitas mais profissionais e lucrativas para encantar seus clientes.</p></div>
+      <div class="fw-card fade"><div class="fw-chk" aria-hidden="true">✓</div><p class="fw-txt">Você quer dominar a massa amanteigada e os recheios que as melhores confeiteiras usam.</p></div>
+      <div class="fw-card fade"><div class="fw-chk" aria-hidden="true">✓</div><p class="fw-txt">Você deseja transformar sua paixão pela confeitaria em uma renda real e consistente.</p></div>
+      <div class="fw-card fade"><div class="fw-chk" aria-hidden="true">✓</div><p class="fw-txt">Você quer receitas testadas, aprovadas e que funcionam no dia a dia de um negócio de delivery.</p></div>
+      <div class="fw-card fade"><div class="fw-chk" aria-hidden="true">✓</div><p class="fw-txt">Você está começando do zero ou quer se reposicionar no mercado de confeitaria.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="sec sec-alt" id="modulos">
+  <div class="ctr">
+    <div class="fade" style="text-align:center">
+      <span class="tag">Conteúdo Completo</span>
+      <h2 class="stitle">O que você vai <em>aprender</em></h2>
+      <p class="ssub" style="margin:0 auto">Módulos práticos criados para o dia a dia de quem vende pelo delivery.</p>
+    </div>
+    <div class="mod-grid">
+      <div class="mcard fade">
+        <div style="height:220px;overflow:hidden"><img src="./ativos/imagens/recheio-cremoso.png" alt="Massa Amanteigada" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="mhdr">
+          <span class="mnum" aria-hidden="true">01</span>
+          <h3 class="mtitle">Massa Amanteigada</h3>
+        </div>
+        <div class="mbody">
+          <p class="mdesc">A base de todo bolo de sucesso. Aprenda a massa perfeita para o delivery: firme, saborosa e que aguenta o transporte sem perder qualidade.</p>
+          <ul class="mtopics">
+            <li class="mtopic">A proporção exata dos ingredientes para o resultado ideal</li>
+            <li class="mtopic">Técnica de mistura para textura profissional</li>
+            <li class="mtopic">Como adaptar para diferentes tamanhos e formatos</li>
+            <li class="mtopic">Segredo para uma massa que se mantém fresca por mais tempo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mcard fade">
+        <div style="height:220px;overflow:hidden"><img src="./ativos/imagens/ebook-completo.png" alt="Recheio Estruturado" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="mhdr gold">
+          <span class="mnum" aria-hidden="true">02</span>
+          <h3 class="mtitle">Recheio Estruturado</h3>
+        </div>
+        <div class="mbody">
+          <p class="mdesc">Recheios que são a alma do negócio. Receitas com estrutura perfeita para não escorrer, não murchar e surpreender quem abre a caixa.</p>
+          <ul class="mtopics">
+            <li class="mtopic">Brigadeiro cremoso com ponto perfeito para rechear</li>
+            <li class="mtopic">Ganache aerada que não perde textura no calor</li>
+            <li class="mtopic">Frutas e geleias que complementam sem desequilibrar</li>
+            <li class="mtopic">Combinações campeãs de venda para o delivery</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="sec bonus-sec" id="bonus">
+  <div class="ctr">
+    <div class="fade">
+      <span class="tag">Bônus Exclusivos</span>
+      <h2 class="stitle">Você ainda leva <em>de graça</em></h2>
+      <p class="ssub">Bônus pensados para maximizar seus resultados.</p>
+    </div>
+    <div class="b-grid">
+      <div class="bcard fade">
+        <div style="height:180px;border-radius:var(--r);overflow:hidden;margin-bottom:20px"><img src="./ativos/imagens/embalagem-venda.png" alt="Recheio Lucrativo" style="width:100%;height:100%;object-fit:cover"></div>
+        <span class="bbadge">Bônus 1</span>
+        <h3 class="btitle">Recheio Lucrativo</h3>
+        <p class="bdesc">Aprenda os recheios com maior margem de lucro no mercado de confeitaria delivery. Receitas que seus clientes pedem de novo — com custo baixo e preço de venda alto.</p>
+        <p class="bval"><del>R$&nbsp;27,00</del> Grátis para você</p>
+      </div>
+      <div class="bcard fade">
+        <div style="height:180px;border-radius:var(--r);overflow:hidden;margin-bottom:20px"><img src="./ativos/imagens/especialista-matheus.png" alt="Massa de Pão de Ló" style="width:100%;height:100%;object-fit:cover"></div>
+        <span class="bbadge">Bônus 2</span>
+        <h3 class="btitle">Massa de Pão de Ló</h3>
+        <p class="bdesc">A massa clássica base de centenas de receitas. Aprenda o ponto exato e como diversificar seu cardápio de delivery sem aumentar a complexidade.</p>
+        <p class="bval"><del>R$&nbsp;27,00</del> Grátis para você</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="fade">
+      <a href="#checkout" class="btnp">Quero os Bônus Também</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="depoimentos">
+  <div class="ctr">
+    <div class="fade" style="text-align:center">
+      <span class="tag">Depoimentos</span>
+      <h2 class="stitle">Quem já <em>transformou</em> o negócio</h2>
+      <p class="ssub" style="margin:0 auto">Resultados reais de alunas que aplicaram as técnicas da apostila.</p>
+    </div>
+    <div class="t-carousel-wrap fade" id="testimonials-carousel">
+      <div class="t-carousel">
+        <div class="t-track" id="t-track">
+          <div class="tcard">
+            <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+            <div class="tq" aria-hidden="true">"</div>
+            <p class="ttxt">Essa apostila mudou tudo para mim. A massa amanteigada do módulo 1 é simplesmente perfeita — minha clientela dobrou em dois meses. Agora não consigo dar conta dos pedidos!</p>
+            <div class="tauthor">
+              <div class="tav" aria-hidden="true">A</div>
+              <div><div class="tname">Ana Carvalho</div><div class="trole">Confeiteira, São Paulo</div></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+            <div class="tq" aria-hidden="true">"</div>
+            <p class="ttxt">O recheio estruturado é outro nível. Meus bolos chegavam desmontando no delivery. Depois da técnica do Matheus, zero reclamação. O bônus lucrativo pagou o valor da apostila na primeira semana.</p>
+            <div class="tauthor">
+              <div class="tav" aria-hidden="true" style="background:linear-gradient(135deg,#C8941F,#8B5E3C)">J</div>
+              <div><div class="tname">Juliana Melo</div><div class="trole">Confeiteira, Belo Horizonte</div></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+            <div class="tq" aria-hidden="true">"</div>
+            <p class="ttxt">Estava com medo de investir mais em cursos. Mas R$&nbsp;39,90 com esse conteúdo? Vale 10x mais. A apostila é direta, prática e faz diferença desde a primeira receita.</p>
+            <div class="tauthor">
+              <div class="tav" aria-hidden="true" style="background:linear-gradient(135deg,#8B5E3C,#C8941F)">P</div>
+              <div><div class="tname">Patricia Souza</div><div class="trole">Confeiteira, Curitiba</div></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+            <div class="tq" aria-hidden="true">"</div>
+            <p class="ttxt">Nunca imaginei que ia aprender tanto em uma apostila tão acessível. O pão de ló do bônus virou o favorito dos meus clientes! Agora faço encomendas toda semana pelo iFood.</p>
+            <div class="tauthor">
+              <div class="tav" aria-hidden="true" style="background:linear-gradient(135deg,#D4847A,#8B5E3C)">F</div>
+              <div><div class="tname">Fernanda Costa</div><div class="trole">Confeiteira, Recife</div></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+            <div class="tq" aria-hidden="true">"</div>
+            <p class="ttxt">Comprei sem expectativa e fui surpreendida. O recheio lucrativo me deu ideias que eu nunca teria sozinha. Em um mês de aplicar as técnicas, aumentei meu faturamento em 40%.</p>
+            <div class="tauthor">
+              <div class="tav" aria-hidden="true" style="background:linear-gradient(135deg,#C8941F,#D4847A)">M</div>
+              <div><div class="tname">Márcia Oliveira</div><div class="trole">Confeiteira, Porto Alegre</div></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+            <div class="tq" aria-hidden="true">"</div>
+            <p class="ttxt">A qualidade das receitas é absurda pro preço. Já gastei muito mais em cursos que não entregaram nem metade disso. A massa amanteigada ficou igual de confeitaria profissional.</p>
+            <div class="tauthor">
+              <div class="tav" aria-hidden="true" style="background:linear-gradient(135deg,#6B4328,#C8941F)">C</div>
+              <div><div class="tname">Camila Santos</div><div class="trole">Confeiteira, Fortaleza</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="t-nav">
+        <button class="t-arrow" id="t-prev" aria-label="Anterior">&#8592;</button>
+        <div class="t-dots" id="t-dots"></div>
+        <button class="t-arrow" id="t-next" aria-label="Próximo">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF GALLERY -->
+<div style="background:var(--bg-alt);padding:40px 0">
+  <div class="ctr" style="text-align:center">
+    <p style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:24px;opacity:.6">Resultados de Nossas Alunas</p>
+    <div style="display:flex;gap:12px;overflow-x:auto;padding:0 24px;justify-content:center">
+      <img src="./ativos/imagens/depoimento-1.png" alt="Resultado" style="height:180px;border-radius:var(--r);box-shadow:0 4px 12px rgba(0,0,0,.1)">
+      <img src="./ativos/imagens/depoimento-3.png" alt="Resultado" style="height:180px;border-radius:var(--r);box-shadow:0 4px 12px rgba(0,0,0,.1)">
+      <img src="./ativos/imagens/garantia-7-dias.png" alt="Resultado" style="height:180px;border-radius:var(--r);box-shadow:0 4px 12px rgba(0,0,0,.1)">
+      <img src="./ativos/imagens/fatia-chocolate.png" alt="Resultado" style="height:180px;border-radius:var(--r);box-shadow:0 4px 12px rgba(0,0,0,.1)">
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="sec price-sec" id="checkout">
+  <div class="ctr">
+    <div class="fade">
+      <span class="tag">Oferta Especial</span>
+      <h2 class="stitle">Comece hoje mesmo.<br><em>Por menos do que uma fatia.</em></h2>
+    </div>
+    <div class="pcard fade">
+      <div class="pbadge">Acesso Completo + 2 Bônus</div>
+      <p class="porig">De R$&nbsp;97,00</p>
+      <div class="pprice"><sup>R$</sup>39<span style="font-size:.55em;opacity:.55;font-family:var(--sans);font-weight:300">,90</span></div>
+      <p class="pinst">Pagamento único · Acesso vitalício</p>
+      <ul class="pfeats">
+        <li class="pfeat"><span class="pchk" aria-hidden="true">✓</span><span>Módulo 1: Massa Amanteigada Perfeita</span></li>
+        <li class="pfeat"><span class="pchk" aria-hidden="true">✓</span><span>Módulo 2: Recheio Estruturado</span></li>
+        <li class="pfeat"><span class="pchk" aria-hidden="true">✓</span><span>Bônus 1: Recheio Lucrativo (valendo R$&nbsp;27,00)</span></li>
+        <li class="pfeat"><span class="pchk" aria-hidden="true">✓</span><span>Bônus 2: Massa de Pão de Ló (valendo R$&nbsp;27,00)</span></li>
+        <li class="pfeat"><span class="pchk" aria-hidden="true">✓</span><span>Acesso vitalício — estude no seu ritmo</span></li>
+        <li class="pfeat"><span class="pchk" aria-hidden="true">✓</span><span>Funciona para delivery, encomendas e vendas locais</span></li>
+      </ul>
+      <a href="#" class="pbtn" id="checkout-btn">Quero Garantir Meu Acesso Agora</a>
+      <div class="guar">
+        <div class="guar-ico" aria-hidden="true">🛡</div>
+        <span>Garantia de 7 dias. Se não gostar, devolvemos 100% do valor.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERT -->
+<section class="sec" id="especialista">
+  <div class="ctr">
+    <div class="fade"><span class="tag">Sobre o Especialista</span></div>
+    <div class="exp-layout">
+      <div class="exp-photo fade" aria-label="Foto de Matheus Araújo">
+        <img src="./ativos/imagens/depoimento-2.png" alt="Matheus Araújo" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="fade">
+        <h2 class="exp-name">Matheus Araújo</h2>
+        <p class="exp-role">Empresário · Especialista em Confeitaria</p>
+        <p class="exp-bio">Empresário com uma loja própria no ramo da confeitaria, Matheus Araújo construiu sua trajetória na prática — da cozinha ao balcão, do pedido à entrega. Com 10 anos de experiência no mercado e mais de 1.000 alunas formadas, ele criou a Apostila Fatias de Bolos para entregar o que funciona de verdade: receitas testadas, técnicas práticas e o conhecimento que transforma paixão em renda.</p>
+        <div class="exp-creds">
+          <div class="exp-cred"><span class="exp-cred-ico" aria-hidden="true">◆</span><span>10 anos de experiência na confeitaria e gestão de negócios</span></div>
+          <div class="exp-cred"><span class="exp-cred-ico" aria-hidden="true">◆</span><span>+1.000 alunas formadas em todo o Brasil</span></div>
+          <div class="exp-cred"><span class="exp-cred-ico" aria-hidden="true">◆</span><span>Proprietário de loja de confeitaria ativa — ensina o que pratica</span></div>
+          <div class="exp-cred"><span class="exp-cred-ico" aria-hidden="true">◆</span><span>Especialista em receitas para delivery e encomendas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-alt" id="faq">
+  <div class="ctr">
+    <div class="fade" style="text-align:center">
+      <span class="tag">Dúvidas Frequentes</span>
+      <h2 class="stitle">Ainda tem <em>dúvidas</em>?</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="fi fade">
+        <button class="fq" aria-expanded="false">Como vou receber o material após a compra?<span class="fchev" aria-hidden="true">▼</span></button>
+        <div class="fa"><p class="fa-inner">Assim que o pagamento for confirmado, você recebe um e-mail com o link de acesso imediato. O acesso é vitalício — baixe e consulte quando quiser, quantas vezes quiser.</p></div>
+      </div>
+      <div class="fi fade">
+        <button class="fq" aria-expanded="false">A apostila é digital ou física?<span class="fchev" aria-hidden="true">▼</span></button>
+        <div class="fa"><p class="fa-inner">100% digital. Acesse pelo computador, tablet ou celular. Se preferir uma cópia física, é só mandar para a gráfica mais próxima.</p></div>
+      </div>
+      <div class="fi fade">
+        <button class="fq" aria-expanded="false">Precisa ter experiência em confeitaria?<span class="fchev" aria-hidden="true">▼</span></button>
+        <div class="fa"><p class="fa-inner">Não! A apostila funciona tanto para quem está começando do zero quanto para confeiteiras que já têm prática e querem aperfeiçoar técnicas. O passo a passo é detalhado e didático.</p></div>
+      </div>
+      <div class="fi fade">
+        <button class="fq" aria-expanded="false">O que está incluído nos bônus?<span class="fchev" aria-hidden="true">▼</span></button>
+        <div class="fa"><p class="fa-inner">Dois bônus exclusivos: <strong>Recheio Lucrativo</strong> (receitas com maior margem de lucro para delivery) e <strong>Massa de Pão de Ló</strong> (base clássica para diversificar seu cardápio). Entregues junto com a apostila principal.</p></div>
+      </div>
+      <div class="fi fade">
+        <button class="fq" aria-expanded="false">E se eu não gostar? Existe garantia?<span class="fchev" aria-hidden="true">▼</span></button>
+        <div class="fa"><p class="fa-inner">Sim! 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeita, basta enviar um e-mail e devolvemos 100% do valor pago. Sem perguntas, sem burocracia.</p></div>
+      </div>
+      <div class="fi fade">
+        <button class="fq" aria-expanded="false">Posso pagar com cartão ou Pix?<span class="fchev" aria-hidden="true">▼</span></button>
+        <div class="fa"><p class="fa-inner">Sim. Aceitamos cartão de crédito, débito, Pix e boleto bancário. O processamento é feito de forma segura pela plataforma de pagamento.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="fade">
+      <a href="#checkout" class="btnp">Quero Minha Apostila Agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="flogo">Apostila Fatias de Bolos</p>
+  <p class="ftag">Receitas testadas e aprovadas por mais de 1.000 confeiteiras em todo o Brasil.</p>
+  <nav class="flinks" aria-label="Links do rodapé">
+    <a href="#" class="flink">Política de Privacidade</a>
+    <a href="#" class="flink">Termos de Uso</a>
+    <a href="#" class="flink">Contato</a>
+    <a href="#checkout" class="flink">Garantir Meu Acesso</a>
+  </nav>
+  <hr class="fdiv">
+  <p class="fcopy">© 2026 Apostila Fatias de Bolos · Matheus Araújo · Todos os direitos reservados.<br>
+  Este produto é disponibilizado exclusivamente em formato digital.</p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky" role="complementary" aria-label="Oferta especial">
+  <p class="sticky-txt"><strong>R$&nbsp;39,90</strong> · Acesso Vitalício + 2 Bônus</p>
+  <a href="#checkout" class="sbtn">Garantir Agora</a>
+</div>
+
+<!-- SCRIPTS -->
+<script type="module">
+/* ── PRETEXT VENDOR (inlined) ── */
+var x0=["BN","BN","BN","BN","BN","BN","BN","BN","BN","S","B","S","WS","B","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","B","B","B","S","WS","ON","ON","ET","ET","ET","ON","ON","ON","ON","ON","ON","CS","ON","CS","ON","EN","EN","EN","EN","EN","EN","EN","EN","EN","EN","ON","ON","ON","ON","ON","ON","ON","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","ON","ON","ON","ON","ON","ON","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","ON","ON","ON","ON","BN","BN","BN","BN","BN","BN","B","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","BN","CS","ON","ET","ET","ET","ET","ON","ON","ON","ON","L","ON","ON","ON","ON","ON","ET","ET","EN","EN","ON","L","ON","ON","ON","EN","L","ON","ON","ON","ON","ON","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","ON","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","ON","L","L","L","L","L","L","L","L"],g0=["AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","CS","AL","ON","ON","NSM","NSM","NSM","NSM","NSM","NSM","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","AL","AL","AL","AL","AL","AL","AL","AN","AN","AN","AN","AN","AN","AN","AN","AN","AN","ET","AN","AN","AL","AL","AL","NSM","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","NSM","ON","NSM","NSM","NSM","NSM","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL","AL"];function m0(O){if(O<=255)return x0[O];if(1424<=O&&O<=1524)return"R";if(1536<=O&&O<=1791)return g0[O&255];if(1792<=O&&O<=2220)return"AL";return"L"}function r0(O){let _=O.length;if(_===0)return null;let J=Array(_),Y=0;for(let V=0;V<_;V++){let $=m0(O.charCodeAt(V));if($==="R"||$==="AL"||$==="AN")Y++;J[V]=$}if(Y===0)return null;let X=_/Y<0.3?0:1,R=new Int8Array(_);for(let V=0;V<_;V++)R[V]=X;let Z=X&1?"R":"L",Q=Z,f=Q;for(let V=0;V<_;V++)if(J[V]==="NSM")J[V]=f;else f=J[V];f=Q;for(let V=0;V<_;V++){let $=J[V];if($==="EN")J[V]=f==="AL"?"AN":"EN";else if($==="R"||$==="L"||$==="AL")f=$}for(let V=0;V<_;V++)if(J[V]==="AL")J[V]="R";for(let V=1;V<_-1;V++){if(J[V]==="ES"&&J[V-1]==="EN"&&J[V+1]==="EN")J[V]="EN";if(J[V]==="CS"&&(J[V-1]==="EN"||J[V-1]==="AN")&&J[V+1]===J[V-1])J[V]=J[V-1]}for(let V=0;V<_;V++){if(J[V]!=="EN")continue;let $;for($=V-1;$>=0&&J[$]==="ET";$--)J[$]="EN";for($=V+1;$<_&&J[$]==="ET";$++)J[$]="EN"}for(let V=0;V<_;V++){let $=J[V];if($==="WS"||$==="ES"||$==="ET"||$==="CS")J[V]="ON"}f=Q;for(let V=0;V<_;V++){let $=J[V];if($==="EN")J[V]=f==="L"?"L":"EN";else if($==="R"||$==="L")f=$}for(let V=0;V<_;V++){if(J[V]!=="ON")continue;let $=V+1;while($<_&&J[$]==="ON")$++;let u=V>0?J[V-1]:Q,q=$<_?J[$]:Q,D=u!=="L"?"R":"L";if(D===(q!=="L"?"R":"L"))for(let K=V;K<$;K++)J[K]=D;V=$-1}for(let V=0;V<_;V++)if(J[V]==="ON")J[V]=Z;for(let V=0;V<_;V++){let $=J[V];if((R[V]&1)===0){if($==="R")R[V]++;else if($==="AN"||$==="EN")R[V]+=2}else if($==="L"||$==="AN"||$==="EN")R[V]++}return R}function u0(O,_){let J=r0(O);if(J===null)return null;let Y=new Int8Array(_.length);for(let X=0;X<_.length;X++)Y[X]=J[_[X]];return Y}var a0=/[ \t\n\r\f]+/g,s0=/[\t\n\r\f]| {2,}|^ | $/;function d0(O){let _=O??"normal";return _==="pre-wrap"?{mode:_,preserveOrdinarySpaces:!0,preserveHardBreaks:!0}:{mode:_,preserveOrdinarySpaces:!1,preserveHardBreaks:!1}}function i0(O){if(!s0.test(O))return O;let _=O.replace(a0," ");if(_.charCodeAt(0)===32)_=_.slice(1);if(_.length>0&&_.charCodeAt(_.length-1)===32)_=_.slice(0,-1);return _}function t0(O){if(!/[\r\f]/.test(O))return O.replace(/\r\n/g,`\n`);return O.replace(/\r\n/g,`\n`).replace(/[\r\f]/g,`\n`)}var d=null,V0;function n0(){if(d===null)d=new Intl.Segmenter(V0,{granularity:"word"});return d}function z0(){d=null}function j0(O){let _=O&&O.length>0?O:void 0;if(V0===_)return;V0=_,d=null}var e0=/\p{Script=Arabic}/u,O0=/\p{M}/u,b0=/\p{Nd}/u;function X0(O){return e0.test(O)}function p(O){for(let _ of O){let J=_.codePointAt(0);if(J>=19968&&J<=40959||J>=13312&&J<=19903||J>=131072&&J<=173791||J>=173824&&J<=177983||J>=177984&&J<=178207||J>=178208&&J<=183983||J>=183984&&J<=191471||J>=196608&&J<=201551||J>=63744&&J<=64255||J>=194560&&J<=195103||J>=12288&&J<=12351||J>=12352&&J<=12447||J>=12448&&J<=12543||J>=44032&&J<=55215||J>=65280&&J<=65519)return!0}return!1}var $0=new Set(["，","．","！","：","；","？","、","。","・","）","〕","〉","》","」","』","】","〗","〙","〛","ー","々","〻","ゝ","ゞ","ヽ","ヾ"]),i=new Set(['"',"(","[","{","\u201C","'","«","‹","（","〔","〈","《","「","『","【","〖","〘","〚"]),Q0=new Set(["'","'"]),r=new Set([".",",","!","?",":",";","،","؛","؟","।","॥","၊","။","၌","၍","၏",")","]","}","%",'"',"\u201D","'","»","›","…"]),OO=new Set([":",".","،","؛"]),_O=new Set(["၏"]),JO=new Set(["\u201D","'","»","›","」","』","】","》","〉","〕","）"]);function RO(O){if(q0(O))return!0;let _=!1;for(let J of O){if(r.has(J)){_=!0;continue}if(_&&O0.test(J))continue;return!1}return _}function VO(O){for(let _ of O)if(!$0.has(_)&&!r.has(_))return!1;return O.length>0}function XO(O){if(q0(O))return!0;for(let _ of O)if(!i.has(_)&&!Q0.has(_)&&!O0.test(_))return!1;return O.length>0}function q0(O){let _=!1;for(let J of O){if(J==="\\"||O0.test(J))continue;if(i.has(J)||r.has(J)||Q0.has(J)){_=!0;continue}return!1}return _}function YO(O){let _=Array.from(O),J=_.length;while(J>0){let Y=_[J-1];if(O0.test(Y)){J--;continue}if(i.has(Y)||Q0.has(Y)){J--;continue}break}if(J<=0||J===_.length)return null;return{head:_.slice(0,J).join(""),tail:_.slice(J).join("")}}function ZO(O,_){if(O.length===0)return!1;for(let J of O)if(J!==_)return!1;return!0}function $O(O){if(!X0(O)||O.length===0)return!1;return OO.has(O[O.length-1])}function QO(O){if(O.length===0)return!1;return _O.has(O[O.length-1])}function qO(O){if(O.length<2||O[0]!==" ")return null;let _=O.slice(1);if(/^\p{M}+$/u.test(_))return{space:" ",marks:_};return null}function D0(O){for(let _=O.length-1;_>=0;_--){let J=O[_];if(JO.has(J))return!0;if(!r.has(J))return!1}return!1}function DO(O,_){if(_.preserveOrdinarySpaces||_.preserveHardBreaks){if(O===" ")return"preserved-space";if(O==="\t")return"tab";if(_.preserveHardBreaks&&O===`\n`)return"hard-break"}if(O===" ")return"space";if(O===" "||O===" "||O==="⁠"||O==="\uFEFF")return"glue";if(O==="​")return"zero-width-break";if(O==="­")return"soft-hyphen";return"text"}function NO(O,_,J,Y){let X=[],R=null,Z="",Q=J,f=!1,V=0;for(let $ of O){let u=DO($,Y),q=u==="text"&&_;if(R!==null&&u===R&&q===f){Z+=$,V+=$.length;continue}if(R!==null)X.push({text:Z,isWordLike:f,kind:R,start:Q});R=u,Z=$,Q=J+V,f=q,V+=$.length}if(R!==null)X.push({text:Z,isWordLike:f,kind:R,start:Q});return X}function Y0(O){return O==="space"||O==="preserved-space"||O==="zero-width-break"||O==="hard-break"}var fO=/^[A-Za-z][A-Za-z0-9+.-]*:$/;function HO(O,_){let J=O.texts[_];if(J.startsWith("www."))return!0;return fO.test(J)&&_+1<O.len&&O.kinds[_+1]==="text"&&O.texts[_+1]==="//"}function UO(O){return O.includes("?")&&(O.includes("://")||O.startsWith("www."))}function MO(O){let _=O.texts.slice(),J=O.isWordLike.slice(),Y=O.kinds.slice(),X=O.starts.slice();for(let Z=0;Z<O.len;Z++){if(Y[Z]!=="text"||!HO(O,Z))continue;let Q=Z+1;while(Q<O.len&&!Y0(Y[Q])){_[Z]+=_[Q],J[Z]=!0;let f=_[Q].includes("?");if(Y[Q]="text",_[Q]="",Q++,f)break}}let R=0;for(let Z=0;Z<_.length;Z++){let Q=_[Z];if(Q.length===0)continue;if(R!==Z)_[R]=Q,J[R]=J[Z],Y[R]=Y[Z],X[R]=X[Z];R++}return _.length=R,J.length=R,Y.length=R,X.length=R,{len:R,texts:_,isWordLike:J,kinds:Y,starts:X}}function CO(O){let _=[],J=[],Y=[],X=[];for(let R=0;R<O.len;R++){let Z=O.texts[R];if(_.push(Z),J.push(O.isWordLike[R]),Y.push(O.kinds[R]),X.push(O.starts[R]),!UO(Z))continue;let Q=R+1;if(Q>=O.len||Y0(O.kinds[Q]))continue;let f="",V=O.starts[Q],$=Q;while($<O.len&&!Y0(O.kinds[$]))f+=O.texts[$],$++;if(f.length>0)_.push(f),J.push(!0),Y.push("text"),X.push(V),R=$-1}return{len:_.length,texts:_,isWordLike:J,kinds:Y,starts:X}}var FO=new Set([":","-","/","×",",",".","+","–","—"]),K0=/^[A-Za-z0-9_]+[,:;]*$/,vO=/[,:;]+$/;function E0(O){for(let _ of O)if(b0.test(_))return!0;return!1}function Z0(O){if(O.length===0)return!1;for(let _ of O){if(b0.test(_)||FO.has(_))continue;return!1}return!0}function uO(O){let _=[],J=[],Y=[],X=[];for(let R=0;R<O.len;R++){let Z=O.texts[R],Q=O.kinds[R];if(Q==="text"&&Z0(Z)&&E0(Z)){let f=Z,V=R+1;while(V<O.len&&O.kinds[V]==="text"&&Z0(O.texts[V]))f+=O.texts[V],V++;_.push(f),J.push(!0),Y.push("text"),X.push(O.starts[R]),R=V-1;continue}_.push(Z),J.push(O.isWordLike[R]),Y.push(Q),X.push(O.starts[R])}return{len:_.length,texts:_,isWordLike:J,kinds:Y,starts:X}}function KO(O){let _=[],J=[],Y=[],X=[];for(let R=0;R<O.len;R++){let Z=O.texts[R],Q=O.kinds[R],f=O.isWordLike[R];if(Q==="text"&&f&&K0.test(Z)){let V=Z,$=R+1;while(vO.test(V)&&$<O.len&&O.kinds[$]==="text"&&O.isWordLike[$]&&K0.test(O.texts[$]))V+=O.texts[$],$++;_.push(V),J.push(!0),Y.push("text"),X.push(O.starts[R]),R=$-1;continue}_.push(Z),J.push(f),Y.push(Q),X.push(O.starts[R])}return{len:_.length,texts:_,isWordLike:J,kinds:Y,starts:X}}function zO(O){let _=[],J=[],Y=[],X=[];for(let R=0;R<O.len;R++){let Z=O.texts[R];if(O.kinds[R]==="text"&&Z.includes("-")){let Q=Z.split("-"),f=Q.length>1;for(let V=0;V<Q.length;V++){let $=Q[V];if(!f)break;if($.length===0||!E0($)||!Z0($))f=!1}if(f){let V=0;for(let $=0;$<Q.length;$++){let u=Q[$],q=$<Q.length-1?`${u}-`:u;_.push(q),J.push(!0),Y.push("text"),X.push(O.starts[R]+V),V+=q.length}continue}}_.push(Z),J.push(O.isWordLike[R]),Y.push(O.kinds[R]),X.push(O.starts[R])}return{len:_.length,texts:_,isWordLike:J,kinds:Y,starts:X}}function jO(O){let _=[],J=[],Y=[],X=[],R=0;while(R<O.len){let Z=O.texts[R],Q=O.isWordLike[R],f=O.kinds[R],V=O.starts[R];if(f==="glue"){let $=Z,u=V;R++;while(R<O.len&&O.kinds[R]==="glue")$+=O.texts[R],R++;if(R<O.len&&O.kinds[R]==="text")Z=$+O.texts[R],Q=O.isWordLike[R],f="text",V=u,R++;else{_.push($),J.push(!1),Y.push("glue"),X.push(u);continue}}else R++;if(f==="text")while(R<O.len&&O.kinds[R]==="glue"){let $="";while(R<O.len&&O.kinds[R]==="glue")$+=O.texts[R],R++;if(R<O.len&&O.kinds[R]==="text"){Z+=$+O.texts[R],Q=Q||O.isWordLike[R],R++;continue}Z+=$}_.push(Z),J.push(Q),Y.push(f),X.push(V)}return{len:_.length,texts:_,isWordLike:J,kinds:Y,starts:X}}function bO(O){let _=O.texts.slice(),J=O.isWordLike.slice(),Y=O.kinds.slice(),X=O.starts.slice();for(let R=0;R<_.length-1;R++){if(Y[R]!=="text"||Y[R+1]!=="text")continue;if(!p(_[R])||!p(_[R+1]))continue;let Z=YO(_[R]);if(Z===null)continue;_[R]=Z.head,_[R+1]=Z.tail+_[R+1],X[R+1]=X[R]+Z.head.length}return{len:_.length,texts:_,isWordLike:J,kinds:Y,starts:X}}function EO(O,_,J){let Y=n0(),X=0,R=[],Z=[],Q=[],f=[];for(let q of Y.segment(O))for(let D of NO(q.segment,q.isWordLike??!1,q.index,J)){let b=D.kind==="text";if(_.carryCJKAfterClosingQuote&&b&&X>0&&Q[X-1]==="text"&&p(D.text)&&p(R[X-1])&&D0(R[X-1]))R[X-1]+=D.text,Z[X-1]=Z[X-1]||D.isWordLike;else if(b&&X>0&&Q[X-1]==="text"&&VO(D.text)&&p(R[X-1]))R[X-1]+=D.text,Z[X-1]=Z[X-1]||D.isWordLike;else if(b&&X>0&&Q[X-1]==="text"&&QO(R[X-1]))R[X-1]+=D.text,Z[X-1]=Z[X-1]||D.isWordLike;else if(b&&X>0&&Q[X-1]==="text"&&D.isWordLike&&X0(D.text)&&$O(R[X-1]))R[X-1]+=D.text,Z[X-1]=!0;else if(b&&!D.isWordLike&&X>0&&Q[X-1]==="text"&&D.text.length===1&&D.text!=="-"&&D.text!=="—"&&ZO(R[X-1],D.text))R[X-1]+=D.text;else if(b&&!D.isWordLike&&X>0&&Q[X-1]==="text"&&(RO(D.text)||D.text==="-"&&Z[X-1]))R[X-1]+=D.text;else R[X]=D.text,Z[X]=D.isWordLike,Q[X]=D.kind,f[X]=D.start,X++}for(let q=1;q<X;q++)if(Q[q]==="text"&&!Z[q]&&q0(R[q])&&Q[q-1]==="text")R[q-1]+=R[q],Z[q-1]=Z[q-1]||Z[q],R[q]="";for(let q=X-2;q>=0;q--)if(Q[q]==="text"&&!Z[q]&&XO(R[q])){let D=q+1;while(D<X&&R[D]==="")D++;if(D<X&&Q[D]==="text")R[D]=R[q]+R[D],f[D]=f[q],R[q]=""}let V=0;for(let q=0;q<X;q++){let D=R[q];if(D.length===0)continue;if(V!==q)R[V]=D,Z[V]=Z[q],Q[V]=Q[q],f[V]=f[q];V++}R.length=V,Z.length=V,Q.length=V,f.length=V;let $=jO({len:V,texts:R,isWordLike:Z,kinds:Q,starts:f}),u=bO(KO(zO(uO(CO(MO($))))));for(let q=0;q<u.len-1;q++){let D=qO(u.texts[q]);if(D===null)continue;if(u.kinds[q]!=="space"&&u.kinds[q]!=="preserved-space"||u.kinds[q+1]!=="text"||!X0(u.texts[q+1]))continue;u.texts[q]=D.space,u.isWordLike[q]=!1,u.kinds[q]=u.kinds[q]==="preserved-space"?"preserved-space":"space",u.texts[q+1]=D.marks+u.texts[q+1],u.starts[q+1]=u.starts[q]+D.space.length}return u}function GO(O,_){if(O.len===0)return[];if(!_.preserveHardBreaks)return[{startSegmentIndex:0,endSegmentIndex:O.len,consumedEndSegmentIndex:O.len}];let J=[],Y=0;for(let X=0;X<O.len;X++){if(O.kinds[X]!=="hard-break")continue;J.push({startSegmentIndex:Y,endSegmentIndex:X,consumedEndSegmentIndex:X+1}),Y=X+1}if(Y<O.len)J.push({startSegmentIndex:Y,endSegmentIndex:O.len,consumedEndSegmentIndex:O.len});return J}function N0(O,_,J="normal"){let Y=d0(J),X=Y.mode==="pre-wrap"?t0(O):i0(O);if(X.length===0)return{normalized:X,chunks:[],len:0,texts:[],isWordLike:[],kinds:[],starts:[]};let R=EO(X,_,Y);return{normalized:X,chunks:GO(R,Y),...R}}var a=null,f0=new Map,s=null,PO=/\p{Emoji_Presentation}/u,AO=/[\p{Emoji_Presentation}\p{Extended_Pictographic}\p{Regional_Indicator}\uFE0F\u20E3]/u,_0=null,H0=new Map;function U0(){if(a!==null)return a;if(typeof OffscreenCanvas<"u")return a=new OffscreenCanvas(1,1).getContext("2d"),a;if(typeof document<"u")return a=document.createElement("canvas").getContext("2d"),a;throw Error("Text measurement requires OffscreenCanvas or a DOM canvas context.")}function BO(O){let _=f0.get(O);if(!_)_=new Map,f0.set(O,_);return _}function x(O,_){let J=_.get(O);if(J===void 0)J={width:U0().measureText(O).width,containsCJK:p(O)},_.set(O,J);return J}function h(){if(s!==null)return s;if(typeof navigator>"u")return s={lineFitEpsilon:0.005,carryCJKAfterClosingQuote:!1,preferPrefixWidthsForBreakableRuns:!1,preferEarlySoftHyphenBreak:!1},s;let O=navigator.userAgent,J=navigator.vendor==="Apple Computer, Inc."&&O.includes("Safari/")&&!O.includes("Chrome/")&&!O.includes("Chromium/")&&!O.includes("CriOS/")&&!O.includes("FxiOS/")&&!O.includes("EdgiOS/"),Y=O.includes("Chrome/")||O.includes("Chromium/")||O.includes("CriOS/")||O.includes("Edg/");return s={lineFitEpsilon:J?0.015625:0.005,carryCJKAfterClosingQuote:Y,preferPrefixWidthsForBreakableRuns:J,preferEarlySoftHyphenBreak:J},s}function TO(O){let _=O.match(/(\d+(?:\.\d+)?)\s*px/);return _?parseFloat(_[1]):16}function M0(){if(_0===null)_0=new Intl.Segmenter(void 0,{granularity:"grapheme"});return _0}function wO(O){return PO.test(O)||O.includes("\uFE0F")}function G0(O){return AO.test(O)}function yO(O,_){let J=H0.get(O);if(J!==void 0)return J;let Y=U0();Y.font=O;let X=Y.measureText("\uD83D\uDE00").width;if(J=0,X>_+0.5&&typeof document<"u"&&document.body!==null){let R=document.createElement("span");R.style.font=O,R.style.display="inline-block",R.style.visibility="hidden",R.style.position="absolute",R.textContent="\uD83D\uDE00",document.body.appendChild(R);let Z=R.getBoundingClientRect().width;if(document.body.removeChild(R),X-Z>0.5)J=X-Z}return H0.set(O,J),J}function LO(O){let _=0,J=M0();for(let Y of J.segment(O))if(wO(Y.segment))_++;return _}function WO(O,_){if(_.emojiCount===void 0)_.emojiCount=LO(O);return _.emojiCount}function g(O,_,J){if(J===0)return _.width;return _.width-WO(O,_)*J}function P0(O,_,J,Y){if(_.graphemeWidths!==void 0)return _.graphemeWidths;let X=[],R=M0();for(let Z of R.segment(O)){let Q=x(Z.segment,J);X.push(g(Z.segment,Q,Y))}return _.graphemeWidths=X.length>1?X:null,_.graphemeWidths}function A0(O,_,J,Y){if(_.graphemePrefixWidths!==void 0)return _.graphemePrefixWidths;let X=[],R=M0(),Z="";for(let Q of R.segment(O)){Z+=Q.segment;let f=x(Z,J);X.push(g(Z,f,Y))}return _.graphemePrefixWidths=X.length>1?X:null,_.graphemePrefixWidths}function B0(O,_){let J=U0();J.font=O;let Y=BO(O),X=TO(O),R=_?yO(O,X):0;return{cache:Y,fontSize:X,emojiCorrection:R}}function T0(){f0.clear(),H0.clear(),_0=null}function m(O){return O==="space"||O==="preserved-space"||O==="tab"||O==="zero-width-break"||O==="soft-hyphen"}function SO(O){return O==="space"}function w0(O,_){if(_<=0)return 0;let J=O%_;if(Math.abs(J)<=0.000001)return _;return _-J}function t(O,_,J,Y){if(!Y||_===null)return O[J];return _[J]-(J>0?_[J-1]:0)}function y0(O,_,J,Y,X,R){let Z=0,Q=_;while(Z<O.length){let f=R?_+O[Z]:Q+O[Z];if((Z+1<O.length?f+X:f)>J+Y)break;Q=f,Z++}return{fitCount:Z,fittedWidth:Q}}function L0(O,_){for(let J=0;J<O.chunks.length;J++){let Y=O.chunks[J];if(_<Y.consumedEndSegmentIndex)return J}return-1}function kO(O,_){let{segmentIndex:J,graphemeIndex:Y}=_;if(J>=O.widths.length)return null;if(Y>0)return _;let X=L0(O,J);if(X<0)return null;let R=O.chunks[X];if(R.startSegmentIndex===R.endSegmentIndex&&J===R.startSegmentIndex)return{segmentIndex:J,graphemeIndex:0};if(J<R.startSegmentIndex)J=R.startSegmentIndex;while(J<R.endSegmentIndex){let Z=O.kinds[J];if(Z!=="space"&&Z!=="zero-width-break"&&Z!=="soft-hyphen")return{segmentIndex:J,graphemeIndex:0};J++}if(R.consumedEndSegmentIndex>=O.widths.length)return null;return{segmentIndex:R.consumedEndSegmentIndex,graphemeIndex:0}}function W0(O,_){if(O.simpleLineWalkFastPath)return IO(O,_);return J0(O,_)}function IO(O,_){let{widths:J,kinds:Y,breakableWidths:X,breakablePrefixWidths:R}=O;if(J.length===0)return 0;let Z=h(),Q=Z.lineFitEpsilon,f=0,V=0,$=!1;function u(q){let D=J[q];if(D>_&&X[q]!==null){let b=X[q],K=R[q]??null;V=0;for(let j=0;j<b.length;j++){let B=t(b,K,j,Z.preferPrefixWidthsForBreakableRuns);if(V>0&&V+B>_+Q)f++,V=B;else{if(V===0)f++;V+=B}}}else V=D,f++;$=!0}for(let q=0;q<J.length;q++){let D=J[q],b=Y[q];if(!$){u(q);continue}let K=V+D;if(K>_+Q){if(SO(b))continue;V=0,$=!1,u(q);continue}V=K}if(!$)return f+1;return f}function cO(O,_,J){let{widths:Y,kinds:X,breakableWidths:R,breakablePrefixWidths:Z}=O;if(Y.length===0)return 0;let Q=h(),f=Q.lineFitEpsilon,V=0,$=0,u=!1,q=0,D=0,b=0,K=0,j=-1,B=0;function k(){j=-1,B=0}function y(H=b,z=K,W=$){V++,J?.({startSegmentIndex:q,startGraphemeIndex:D,endSegmentIndex:H,endGraphemeIndex:z,width:W}),$=0,u=!1,k()}function A(H,z){u=!0,q=H,D=0,b=H+1,K=0,$=z}function T(H,z,W){u=!0,q=H,D=z,b=H,K=z+1,$=W}function L(H,z){if(!u){A(H,z);return}$+=z,b=H+1,K=0}function C(H,z){if(!m(X[H]))return;j=H+1,B=$-z}function F(H){P(H,0)}function P(H,z){let W=R[H],c=Z[H]??null;for(let I=z;I<W.length;I++){let o=t(W,c,I,Q.preferPrefixWidthsForBreakableRuns);if(!u){T(H,I,o);continue}if($+o>_+f)y(),T(H,I,o);else $+=o,b=H,K=I+1}if(u&&b===H&&K===W.length)b=H+1,K=0}let E=0;while(E<Y.length){let H=Y[E],z=X[E];if(!u){if(H>_&&R[E]!==null)F(E);else A(E,H);C(E,H),E++;continue}if($+H>_+f){if(m(z)){L(E,H),y(E+1,0,$-H),E++;continue}if(j>=0){y(j,0,B);continue}if(H>_&&R[E]!==null){y(),F(E),E++;continue}y();continue}L(E,H),C(E,H),E++}if(u)y();return V}function J0(O,_,J){if(O.simpleLineWalkFastPath)return cO(O,_,J);let{widths:Y,lineEndFitAdvances:X,lineEndPaintAdvances:R,kinds:Z,breakableWidths:Q,breakablePrefixWidths:f,discretionaryHyphenWidth:V,tabStopAdvance:$,chunks:u}=O;if(Y.length===0||u.length===0)return 0;let q=h(),D=q.lineFitEpsilon,b=0,K=0,j=!1,B=0,k=0,y=0,A=0,T=-1,L=0,C=0,F=null;function P(){T=-1,L=0,C=0,F=null}function E(N=y,M=A,v=K){b++,J?.({startSegmentIndex:B,startGraphemeIndex:k,endSegmentIndex:N,endGraphemeIndex:M,width:v}),K=0,j=!1,P()}function H(N,M){j=!0,B=N,k=0,y=N+1,A=0,K=M}function z(N,M,v){j=!0,B=N,k=M,y=N,A=M+1,K=v}function W(N,M){if(!j){H(N,M);return}K+=M,y=N+1,A=0}function c(N,M){if(!m(Z[N]))return;let v=Z[N]==="tab"?0:X[N],w=Z[N]==="tab"?M:R[N];T=N+1,L=K-M+v,C=K-M+w,F=Z[N]}function I(N){o(N,0)}function o(N,M){let v=Q[N],w=f[N]??null;for(let G=M;G<v.length;G++){let l=t(v,w,G,q.preferPrefixWidthsForBreakableRuns);if(!j){z(N,G,l);continue}if(K+l>_+D)E(),z(N,G,l);else K+=l,y=N,A=G+1}if(j&&y===N&&A===v.length)y=N+1,A=0}function S(N){if(F!=="soft-hyphen")return!1;let M=Q[N];if(M===null)return!1;let v=q.preferPrefixWidthsForBreakableRuns?f[N]??M:M,w=v!==M,{fitCount:G,fittedWidth:l}=y0(v,K,_,D,V,w);if(G===0)return!1;if(K=l,y=N,A=G,P(),G===M.length)return y=N+1,A=0,!0;return E(N,G,l+V),o(N,G),!0}function U(N){b++,J?.({startSegmentIndex:N.startSegmentIndex,startGraphemeIndex:0,endSegmentIndex:N.consumedEndSegmentIndex,endGraphemeIndex:0,width:0}),P()}for(let N=0;N<u.length;N++){let M=u[N];if(M.startSegmentIndex===M.endSegmentIndex){U(M);continue}j=!1,K=0,B=M.startSegmentIndex,k=0,y=M.startSegmentIndex,A=0,P();let v=M.startSegmentIndex;while(v<M.endSegmentIndex){let w=Z[v],G=w==="tab"?w0(K,$):Y[v];if(w==="soft-hyphen"){if(j)y=v+1,A=0,T=v+1,L=K+V,C=K+V,F=w;v++;continue}if(!j){if(G>_&&Q[v]!==null)I(v);else H(v,G);c(v,G),v++;continue}if(K+G>_+D){let n=K+(w==="tab"?0:X[v]),e=K+(w==="tab"?G:R[v]);if(F==="soft-hyphen"&&q.preferEarlySoftHyphenBreak&&L<=_+D){E(T,0,C);continue}if(F==="soft-hyphen"&&S(v)){v++;continue}if(m(w)&&n<=_+D){W(v,G),E(v+1,0,e),v++;continue}if(T>=0&&L<=_+D){E(T,0,C);continue}if(G>_&&Q[v]!==null){E(),I(v),v++;continue}E();continue}W(v,G),c(v,G),v++}if(j){let w=T===M.consumedEndSegmentIndex?C:K;E(M.consumedEndSegmentIndex,0,w)}}return b}function S0(O,_,J){let Y=kO(O,_);if(Y===null)return null;if(O.simpleLineWalkFastPath)return oO(O,Y,J);let X=L0(O,Y.segmentIndex);if(X<0)return null;let R=O.chunks[X];if(R.startSegmentIndex===R.endSegmentIndex)return{startSegmentIndex:R.startSegmentIndex,startGraphemeIndex:0,endSegmentIndex:R.consumedEndSegmentIndex,endGraphemeIndex:0,width:0};let{widths:Z,lineEndFitAdvances:Q,lineEndPaintAdvances:f,kinds:V,breakableWidths:$,breakablePrefixWidths:u,discretionaryHyphenWidth:q,tabStopAdvance:D}=O,b=h(),K=b.lineFitEpsilon,j=0,B=!1,k=Y.segmentIndex,y=Y.graphemeIndex,A=k,T=y,L=-1,C=0,F=0,P=null;function E(){L=-1,C=0,F=0,P=null}function H(U=A,N=T,M=j){if(!B)return null;return{startSegmentIndex:k,startGraphemeIndex:y,endSegmentIndex:U,endGraphemeIndex:N,width:M}}function z(U,N){B=!0,A=U+1,T=0,j=N}function W(U,N,M){B=!0,A=U,T=N+1,j=M}function c(U,N){if(!j){z(U,N);return}j+=N,A=U+1,T=0}function I(U,N){if(!m(V[U]))return;let M=V[U]==="tab"?0:Q[U],v=V[U]==="tab"?N:f[U];L=U+1,C=j-N+M,F=j-N+v,P=V[U]}function o(U,N){let M=$[U],v=u[U]??null;for(let w=N;w<M.length;w++){let G=t(M,v,w,b.preferPrefixWidthsForBreakableRuns);if(!B){W(U,w,G);continue}if(j+G>J+K)return H();j+=G,A=U,T=w+1}if(B&&A===U&&T===M.length)A=U+1,T=0;return null}function S(U){if(P!=="soft-hyphen"||L<0)return null;let N=$[U]??null;if(N!==null){let M=b.preferPrefixWidthsForBreakableRuns?u[U]??N:N,v=M!==N,{fitCount:w,fittedWidth:G}=y0(M,j,J,K,q,v);if(w===N.length)return j=G,A=U+1,T=0,E(),null;if(w>0)return H(U,w,G+q)}if(C<=J+K)return H(L,0,F);return null}for(let U=Y.segmentIndex;U<R.endSegmentIndex;U++){let N=V[U],M=U===Y.segmentIndex?Y.graphemeIndex:0,v=N==="tab"?w0(j,D):Z[U];if(N==="soft-hyphen"&&M===0){if(B)A=U+1,T=0,L=U+1,C=j+q,F=j+q,P=N;continue}if(!B){if(M>0){let G=o(U,M);if(G!==null)return G}else if(v>J&&$[U]!==null){let G=o(U,0);if(G!==null)return G}else z(U,v);I(U,v);continue}if(j+v>J+K){let G=j+(N==="tab"?0:Q[U]),l=j+(N==="tab"?v:f[U]);if(P==="soft-hyphen"&&b.preferEarlySoftHyphenBreak&&C<=J+K)return H(L,0,F);let n=S(U);if(n!==null)return n;if(m(N)&&G<=J+K)return c(U,v),H(U+1,0,l);if(L>=0&&C<=J+K)return H(L,0,F);if(v>J&&$[U]!==null){let e=H();if(e!==null)return e;let v0=o(U,0);if(v0!==null)return v0}return H()}c(U,v),I(U,v)}if(L===R.consumedEndSegmentIndex&&T===0)return H(R.consumedEndSegmentIndex,0,F);return H(R.consumedEndSegmentIndex,0,j)}function oO(O,_,J){let{widths:Y,kinds:X,breakableWidths:R,breakablePrefixWidths:Z}=O,Q=h(),f=Q.lineFitEpsilon,V=0,$=!1,u=_.segmentIndex,q=_.graphemeIndex,D=u,b=q,K=-1,j=0;function B(C=D,F=b,P=V){if(!$)return null;return{startSegmentIndex:u,startGraphemeIndex:q,endSegmentIndex:C,endGraphemeIndex:F,width:P}}function k(C,F){$=!0,D=C+1,b=0,V=F}function y(C,F,P){$=!0,D=C,b=F+1,V=P}function A(C,F){if(!$){k(C,F);return}V+=F,D=C+1,b=0}function T(C,F){if(!m(X[C]))return;K=C+1,j=V-F}function L(C,F){let P=R[C],E=Z[C]??null;for(let H=F;H<P.length;H++){let z=t(P,E,H,Q.preferPrefixWidthsForBreakableRuns);if(!$){y(C,H,z);continue}if(V+z>J+f)return B();V+=z,D=C,b=H+1}if($&&D===C&&b===P.length)D=C+1,b=0;return null}for(let C=_.segmentIndex;C<Y.length;C++){let F=Y[C],P=X[C],E=C===_.segmentIndex?_.graphemeIndex:0;if(!$){if(E>0){let z=L(C,E);if(z!==null)return z}else if(F>J&&R[C]!==null){let z=L(C,0);if(z!==null)return z}else k(C,F);T(C,F);continue}if(V+F>J+f){if(m(P))return A(C,F),B(C+1,0,V-F);if(K>=0)return B(K,0,j);if(F>J&&R[C]!==null){let z=B();if(z!==null)return z;let W=L(C,0);if(W!==null)return W}return B()}A(C,F),T(C,F)}return B()}var R0=null,C0=new WeakMap;function I0(){if(R0===null)R0=new Intl.Segmenter(void 0,{granularity:"grapheme"});return R0}function lO(O){if(O)return{widths:[],lineEndFitAdvances:[],lineEndPaintAdvances:[],kinds:[],simpleLineWalkFastPath:!0,segLevels:null,breakableWidths:[],breakablePrefixWidths:[],discretionaryHyphenWidth:0,tabStopAdvance:0,chunks:[],segments:[]};return{widths:[],lineEndFitAdvances:[],lineEndPaintAdvances:[],kinds:[],simpleLineWalkFastPath:!0,segLevels:null,breakableWidths:[],breakablePrefixWidths:[],discretionaryHyphenWidth:0,tabStopAdvance:0,chunks:[]}}function c0(O,_,J){let Y=I0(),X=h(),{cache:R,emojiCorrection:Z}=B0(_,G0(O.normalized)),Q=g("-",x("-",R),Z),V=g(" ",x(" ",R),Z)*8;if(O.len===0)return lO(J);let $=[],u=[],q=[],D=[],b=O.chunks.length<=1,K=J?[]:null,j=[],B=[],k=J?[]:null,y=Array.from({length:O.len}),A=Array.from({length:O.len});function T(F,P,E,H,z,W,c,I){if(z!=="text"&&z!=="space"&&z!=="zero-width-break")b=!1;if($.push(P),u.push(E),q.push(H),D.push(z),K?.push(W),j.push(c),B.push(I),k!==null)k.push(F)}for(let F=0;F<O.len;F++){y[F]=$.length;let P=O.texts[F],E=O.isWordLike[F],H=O.kinds[F],z=O.starts[F];if(H==="soft-hyphen"){T(P,0,Q,Q,H,z,null,null),A[F]=$.length;continue}if(H==="hard-break"){T(P,0,0,0,H,z,null,null),A[F]=$.length;continue}if(H==="tab"){T(P,0,0,0,H,z,null,null),A[F]=$.length;continue}let W=x(P,R);if(H==="text"&&W.containsCJK){let S="",U=0;for(let N of Y.segment(P)){let M=N.segment;if(S.length===0){S=M,U=N.index;continue}if(i.has(S)||$0.has(M)||r.has(M)||X.carryCJKAfterClosingQuote&&p(M)&&D0(S)){S+=M;continue}let v=x(S,R),w=g(S,v,Z);T(S,w,w,w,"text",z+U,null,null),S=M,U=N.index}if(S.length>0){let N=x(S,R),M=g(S,N,Z);T(S,M,M,M,"text",z+U,null,null)}A[F]=$.length;continue}let c=g(P,W,Z),I=H==="space"||H==="preserved-space"||H==="zero-width-break"?0:c,o=H==="space"||H==="zero-width-break"?0:c;if(E&&P.length>1){let S=P0(P,W,R,Z),U=X.preferPrefixWidthsForBreakableRuns?A0(P,W,R,Z):null;T(P,c,I,o,H,z,S,U)}else T(P,c,I,o,H,z,null,null);A[F]=$.length}let L=hO(O.chunks,y,A),C=K===null?null:u0(O.normalized,K);if(k!==null)return{widths:$,lineEndFitAdvances:u,lineEndPaintAdvances:q,kinds:D,simpleLineWalkFastPath:b,segLevels:C,breakableWidths:j,breakablePrefixWidths:B,discretionaryHyphenWidth:Q,tabStopAdvance:V,chunks:L,segments:k};return{widths:$,lineEndFitAdvances:u,lineEndPaintAdvances:q,kinds:D,simpleLineWalkFastPath:b,segLevels:C,breakableWidths:j,breakablePrefixWidths:B,discretionaryHyphenWidth:Q,tabStopAdvance:V,chunks:L}}function hO(O,_,J){let Y=[];for(let X=0;X<O.length;X++){let R=O[X],Z=R.startSegmentIndex<_.length?_[R.startSegmentIndex]:J[J.length-1]??0,Q=R.endSegmentIndex<_.length?_[R.endSegmentIndex]:J[J.length-1]??0,f=R.consumedEndSegmentIndex<_.length?_[R.consumedEndSegmentIndex]:J[J.length-1]??0;Y.push({startSegmentIndex:Z,endSegmentIndex:Q,consumedEndSegmentIndex:f})}return Y}function o0(O,_,J,Y){let X=N0(O,h(),Y?.whiteSpace);return c0(X,_,J)}function X1(O,_,J){return o0(O,_,!1,J)}function Y1(O,_,J){return o0(O,_,!0,J)}function F0(O){return O}function Z1(O,_,J){let Y=W0(F0(O),_);return{lineCount:Y,height:Y*J}}function k0(O,_){let Y=J.get(O);if(Y!==void 0)return Y;Y=[];let X=I0();for(let R of X.segment(_[O]))Y.push(R.segment);return J.set(O,Y),Y}function l0(O){let _=C0.get(O);if(_!==void 0)return _;return _=new Map,C0.set(O,_),_}function pO(O,_,J,Y){return Y>0&&O[Y-1]==="soft-hyphen"&&!(_===Y&&J>0)}function xO(O,_,J,Y,X,R,Z){let Q="",f=pO(_,Y,X,R);for(let V=Y;V<R;V++){if(_[V]==="soft-hyphen"||_[V]==="hard-break")continue;if(V===Y&&X>0)Q+=k0(V,O,J).slice(X).join("");else Q+=O[V]}if(Z>0){if(f)Q+="-";Q+=k0(R,O,J).slice(Y===R?X:0,Z).join("")}else if(f)Q+="-";return Q}function h0(O,_,J,Y,X,R,Z){return{text:xO(O.segments,O.kinds,_,Y,X,R,Z),width:J,start:{segmentIndex:Y,graphemeIndex:X},end:{segmentIndex:R,graphemeIndex:Z}}}function gO(O,_,J){return h0(O,_,J.width,J.startSegmentIndex,J.startGraphemeIndex,J.endSegmentIndex,J.endGraphemeIndex)}function p0(O){return{width:O.width,start:{segmentIndex:O.startSegmentIndex,graphemeIndex:O.startGraphemeIndex},end:{segmentIndex:O.endSegmentIndex,graphemeIndex:O.endGraphemeIndex}}}function mO(O,_,J){let Y=S0(O,_,J);if(Y===null)return null;return p0(Y)}function rO(O,_){return h0(O,l0(O),_.width,_.start.segmentIndex,_.start.graphemeIndex,_.end.segmentIndex,_.end.graphemeIndex)}function $1(O,_,J){if(O.widths.length===0)return 0;return J0(F0(O),_,(Y)=>{J(p0(Y))})}function Q1(O,_,J){let Y=mO(O,_,J);if(Y===null)return null;return rO(O,Y)}function q1(O,_,J){let Y=[];if(O.widths.length===0)return{lineCount:0,height:0,lines:Y};let X=l0(O),R=J0(F0(O),_,(Z)=>{Y.push(gO(O,X,Z))});return{lineCount:R,height:R*J,lines:Y}}function aO(){z0(),R0=null,C0=new WeakMap,T0()}
+/* ── END PRETEXT VENDOR ── */
+
+// Friendly aliases
+const prepare = X1;
+const layout = Z1;
+
+// ── STICKY CTA ──
+const sticky = document.querySelector('.sticky');
+const heroEl = document.querySelector('.hero');
+if (heroEl) {
+  new IntersectionObserver(
+    ([e]) => sticky.classList.toggle('on', !e.isIntersecting),
+    { threshold: 0.1 }
+  ).observe(heroEl);
+}
+
+// ── SCROLL FADE-IN ──
+const fadeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); fadeIO.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.fade').forEach(el => fadeIO.observe(el));
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.fq').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.fi');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.fi.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.fq').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ── PRETEXT LAYOUT ──
+async function initPretext() {
+  await document.fonts.ready;
+  const sel = 'h1, h2, p.hsub, .fw-txt, .mdesc, .bdesc, .exp-bio, .ttxt, .fa-inner, .ssub';
+  const els = document.querySelectorAll(sel);
+  const map = new Map();
+  for (const el of els) {
+    const txt = el.textContent.trim();
+    if (!txt || el.clientWidth < 20) continue;
+    try { map.set(el, prepare(txt, getComputedStyle(el).font)); } catch (_) {}
+  }
+  function relayout() {
+    for (const [el, handle] of map) {
+      try {
+        const lh = parseFloat(getComputedStyle(el).lineHeight) || 22;
+        const { height } = layout(handle, Math.max(el.clientWidth, 80), lh);
+        if (height > 0) el.style.minHeight = height + 'px';
+      } catch (_) {}
+    }
+  }
+  new ResizeObserver(relayout).observe(document.body);
+  relayout();
+}
+initPretext().catch(() => {});
+
+// ── TESTIMONIALS CAROUSEL ──
+(function() {
+  const track = document.getElementById('t-track');
+  const dotsWrap = document.getElementById('t-dots');
+  const prevBtn = document.getElementById('t-prev');
+  const nextBtn = document.getElementById('t-next');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.tcard');
+  const total = cards.length;
+  let current = 0;
+  let autoTimer;
+
+  // Responsive: how many visible at once
+  function visibleCount() {
+    const w = window.innerWidth;
+    if (w >= 1024) return 3;
+    if (w >= 700) return 2;
+    return 1;
+  }
+
+  // Build dots
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const pages = Math.ceil(total / visibleCount());
+    for (let i = 0; i < pages; i++) {
+      const d = document.createElement('button');
+      d.className = 't-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Depoimento ' + (i+1));
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function updateDots() {
+    const page = Math.floor(current / visibleCount());
+    dotsWrap.querySelectorAll('.t-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === page);
+    });
+  }
+
+  function goTo(idx) {
+    const vc = visibleCount();
+    const maxIdx = Math.max(0, total - vc);
+    current = Math.min(Math.max(idx * vc, 0), maxIdx);
+    const cardW = track.parentElement.offsetWidth;
+    const gap = vc > 1 ? 20 : 0;
+    const slideW = vc > 1 ? (cardW - gap * (vc - 1)) / vc + gap : cardW;
+    track.style.transform = `translateX(-${current * slideW}px)`;
+    updateDots();
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= maxIdx;
+  }
+
+  function advance() {
+    const vc = visibleCount();
+    const maxIdx = Math.max(0, total - vc);
+    const nextIdx = current + vc > maxIdx ? 0 : Math.floor(current / vc) + 1;
+    goTo(nextIdx);
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(advance, 4500);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    const vc = visibleCount();
+    goTo(Math.max(0, Math.floor(current / vc) - 1));
+    startAuto();
+  });
+  nextBtn.addEventListener('click', () => {
+    const vc = visibleCount();
+    goTo(Math.floor(current / vc) + 1);
+    startAuto();
+  });
+
+  // Touch / mouse drag
+  let startX = 0, isDragging = false, startTranslate = 0;
+  function getTranslate() {
+    const st = window.getComputedStyle(track).transform;
+    if (st === 'none') return 0;
+    return parseFloat(st.split(',')[4]) || 0;
+  }
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.pageX; startTranslate = getTranslate(); track.classList.add('dragging'); });
+  track.addEventListener('touchstart', e => { startX = e.touches[0].pageX; startTranslate = getTranslate(); }, {passive:true});
+  track.addEventListener('mousemove', e => { if (!isDragging) return; track.style.transform = `translateX(${startTranslate + e.pageX - startX}px)`; });
+  track.addEventListener('touchmove', e => { track.style.transform = `translateX(${startTranslate + e.touches[0].pageX - startX}px)`; }, {passive:true});
+  function endDrag(endX) {
+    isDragging = false;
+    track.classList.remove('dragging');
+    const diff = endX - startX;
+    const vc = visibleCount();
+    const page = Math.floor(current / vc);
+    if (diff < -50) goTo(page + 1);
+    else if (diff > 50) goTo(Math.max(0, page - 1));
+    else goTo(page);
+    startAuto();
+  }
+  track.addEventListener('mouseup', e => endDrag(e.pageX));
+  track.addEventListener('mouseleave', e => { if (isDragging) endDrag(e.pageX); });
+  track.addEventListener('touchend', e => endDrag(e.changedTouches[0].pageX));
+
+  // Pause on hover
+  track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  track.parentElement.addEventListener('mouseleave', startAuto);
+
+  // Init
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+  buildDots();
+  goTo(0);
+  startAuto();
+})();
+</script>
+</body>
+</html>

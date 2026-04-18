@@ -1,48 +1,39 @@
-# 🚀 PROJETO: Landing Page Apostila Bolos (Ajustado)
+# 🚀 PROJETO: Framework Operacional de Landing Pages
 
 ---
 
 ## 📌 OBJETIVO
-Manter uma landing page de vendas de alta performance, 100% consistente em sua estrutura de arquivos e documentação, garantindo facilidade de manutenção e escalabilidade.
+Prover uma estrutura 100% replicável, consistente e de alta performance para a criação de novas páginas de vendas em minutos.
 
 ---
 
-## 📐 CONVENÇÕES OFICIAIS DO REPOSITÓRIO
+## 📐 CONVENÇÕES E REGRAS PERMANENTES
 
-Toda IA ou desenvolvedor deve respeitar rigorosamente esta estrutura:
+### 1. Nomenclatura de Ativos
+- Pastas: `ativos/imagens/`, `documentos/`, `variacoes/`.
+- Arquivos: Minúsculas, sem espaços, usando hífen (ex: `botao-venda-principal.png`).
 
-| Caminho / Arquivo | Descrição |
-| :--- | :--- |
-| `index.html` | Único arquivo de código da landing page. |
-| `README.md` | Guia geral do repositório. |
-| `PROJETO.md` | Fonte da verdade técnica e regras de negócio. |
-| `RELATORIO_DE_SANIDADE.md` | Histórico de auditorias e saneamentos. |
-| `ativos/imagens/` | Pasta exclusiva para imagens (nomes minúsculos, sem espaços). |
-| `documentos/` | Pasta para copy, branding e logs de alteração. |
-| `.gitignore` | Proteção contra lixo de sistema e backups. |
-
----
-
-## 🛠️ REGRAS TÉCNICAS E DE ATIVOS
-
-1. **Imagens**: Devem ser referenciadas sempre com caminho relativo `./ativos/imagens/`.
-2. **Nomenclatura**: Usar nomes descritivos em português (ex: `fatia-chocolate.png`).
-3. **Backup**: Jamais deletar arquivos sem antes mover para `_quarentena_repo/`.
-4. **Git**: Usar o prefixo `fix:` para correções e `feat:` para novos módulos.
+### 2. Workflow de Alteração (Obrigatório)
+Qualquer IA ou Humano que atuar neste repositório DEVE:
+1. **Verificar Superpowers**: Confirmar se as skills de design e código estão ativas.
+2. **Backup Prévio**: Mover versões antigas para `_revisao/`.
+3. **Briefing**: Coletar dados do novo produto antes de codar.
+4. **Variedade**: Oferecer sempre 3 direções visuais.
 
 ---
 
-## 🧪 ESTADO ATUAL (v1.5)
-- Estrutura física saneada ✅
-- Nomenclatura padronizada ✅
-- Caminhos de imagem corrigidos ✅
-- Documentação sincronizada ✅
-- Pronto para validação final do cliente ✅
+## 🧠 HISTÓRICO DE EVOLUÇÃO
+
+- **v1.0**: Landing Page base (Apostila Bolos).
+- **v1.5**: Saneamento de repositório e consistência de caminhos.
+- **v2.0**: Transformação em Framework Replicável. Criação de modelos de layout (Elegante, Direto, Editorial) e política de preservação permanente.
 
 ---
 
-## 🧠 HISTÓRICO DE CONSISTÊNCIA
-- **2026-04-17**: Ajuste final de consistência. Remoção de pastas com nomes inválidos, renomeação de `PROJECT.md` para `PROJETO.md` e sincronização total entre código e documentação.
+## 🛡️ POLÍTICA DE SEGURANÇA E BACKUP
+- Nunca apagar imagens originais.
+- Nunca subir pastas de sistema (`%APPDATA%`, `node_modules`).
+- Commits devem seguir o padrão Angular (feat, fix, docs, etc).
 
 ---
-**Instrução para IA**: Não crie pastas fora do padrão acima. Toda imagem nova deve ser salva em `ativos/imagens/` e documentada no `index.html`.
+**IA Instruction**: Use as skills `systematic-debugging` e `writing-skills` para manter a qualidade deste framework.
