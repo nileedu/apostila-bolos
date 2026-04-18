@@ -22,6 +22,18 @@ Qualquer IA ou Humano que atuar neste repositório DEVE:
 
 ---
 
+## 🚀 WORKFLOW OBRIGATÓRIO (Novos Projetos)
+
+Toda vez que uma nova landing page for solicitada, a IA deve seguir este rito:
+
+1. **Identificar o Produto**: Perguntar nome, nicho e promessa.
+2. **Coletar Briefing**: Usar o template em `documentos/briefing-novo-produto.md`.
+3. **Sugerir Identidade**: Propor paleta de cores e tipografia baseada no nicho.
+4. **Oferecer Variações**: Apresentar as 3 direções (Elegante, Direto, Editorial).
+5. **Construir**: Codar a versão escolhida seguindo as `documentos/estrutura-replicavel.md`.
+
+---
+
 ## 🧠 HISTÓRICO DE EVOLUÇÃO
 
 - **v1.0**: Landing Page base (Apostila Bolos).

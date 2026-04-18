@@ -1,23 +1,26 @@
-# 🎨 Modelos de Layouts Base
+# 🎨 Modelos de Layouts Base (v2.0)
 
-A estrutura de código permite 3 abordagens visuais distintas para cada produto.
+Este repositório oferece 3 abordagens estratégicas para apresentar ao cliente ou adaptar a novos nichos.
 
 ---
 
 ## 1. 🏆 Elegante Premium (`variacoes/layout-01-elegante-premium.html`)
-- **Público**: Clientes que buscam exclusividade e sofisticação.
-- **Visual**: Tipografia serifada, paleta suave, muito espaço em branco.
-- **Foco**: Autoridade do especialista e desejo aspiracional.
+- **Conceito**: Minimalismo sofisticado.
+- **Público**: Clientes que valorizam estética e autoridade ("High-Ticket feel").
+- **Diferencial**: Tipografia *Cormorant Garamond*, grandes espaços em branco, imagens em grid de galeria artística.
+- **Quando usar**: Produtos gourmet, moda, estética ou mentorias exclusivas.
 
 ## 2. ⚡ Conversão Direta (`variacoes/layout-02-conversao-direta.html`)
-- **Público**: Clientes impulsivos ou que buscam uma solução rápida e barata.
-- **Visual**: Cores vibrantes (Vermelho/Amarelo), botões pulsantes, fontes sans-serif pesadas.
-- **Foco**: Urgência, escassez e preço promocional.
+- **Conceito**: Velocidade e Urgência.
+- **Público**: Compradores de impulso ou público de tráfego pago frio.
+- **Diferencial**: Títulos gigantes, alto contraste (Vermelho/Preto/Amarelo), blocos de benefícios objetivos e CTAs "pulsantes".
+- **Quando usar**: Promoções relâmpago, infoprodutos de entrada (tripwire) ou nichos de "renda extra".
 
 ## 3. 📖 Editorial / Storytelling (`variacoes/layout-03-editorial.html`)
-- **Público**: Clientes que precisam entender o método antes de comprar.
-- **Visual**: Blocos de conteúdo intercalados, assemelha-se a uma revista ou blog premium.
-- **Foco**: Educação do cliente e explicação passo a passo do benefício.
+- **Conceito**: Jornada do Herói / Método.
+- **Público**: Clientes que precisam de confiança e explicação técnica antes da compra.
+- **Diferencial**: Formato de blog/revista, foco no texto narrativo, dropcaps (letra capitular) e blocos de destaque para o método.
+- **Quando usar**: Cursos técnicos, biografias, métodos inovadores ou produtos de saúde.
 
 ---
-**Como usar**: Escolha o modelo que mais combina com o briefing e copie o CSS do `:root` para o projeto principal.
+**Regra de Ouro**: Sempre apresente as 3 versões ao cliente para validar qual "pilar de venda" ressoa melhor com o público dele.

@@ -11,3 +11,8 @@
 
 ## v1.2
 - criaÃ§Ã£o da base documental para continuidade por IA
+
+## [2.1.0] - 2026-04-17
+- Adição de 3 variações completas de layout para o produto Apostila Bolos.
+- Implementação de workflow obrigatório de briefing e design.
+- Padronização de documentação v2.0.
