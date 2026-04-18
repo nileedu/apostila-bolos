@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium: Apostila Fatias de Bolos — Matheus Araújo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F6; --bg-alt:#F2F0EB;
+  --primary:#4A3728; --primary-dark:#2C1E16;
+  --gold:#B8860B; --gold-light:#D4AF37;
+  --rose:#D4847A; --rose-light:#F0C8C4;
+  --dark:#1A1A1A; --text:#333333; --text-light:#666666;
+  --white:#FFFFFF;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --r:4px; --rl:10px; --rp:0px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── TICKER ── */
+.ticker{background:var(--dark);color:var(--gold-light);padding:0;overflow:hidden;position:relative;border-bottom:1px solid rgba(184,134,11,.2);width:100%}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(to right,var(--dark),transparent)}
+.ticker::after{right:0;background:linear-gradient(to left,var(--dark),transparent)}
+.ticker-inner{padding:12px 0;display:flex;overflow:hidden}
+.ticker-track{display:flex;flex-wrap:nowrap;white-space:nowrap;width:max-content;animation:marquee 110s linear infinite;will-change:transform}
+@keyframes marquee{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.ti{display:flex;align-items:center;gap:12px;padding:0 40px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;flex-shrink:0}
+.td{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ── STICKY CTA ── */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(26,26,26,0.98);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:999;transform:translateY(110%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);backdrop-filter:blur(10px)}
+.sticky.on{transform:translateY(0)}
+.sticky-txt{color:var(--white);font-size:13px;letter-spacing:0.05em}
+.sbtn{background:var(--gold);color:var(--white);font-size:13px;font-weight:600;padding:12px 28px;border-radius:var(--rp);text-transform:uppercase;letter-spacing:0.1em;transition:all .3s}
+.sbtn:hover{background:var(--white);color:var(--dark)}
+
+/* ── NAV ── */
+.nav{background:var(--bg);border-bottom:1px solid rgba(74,55,40,.05);padding:24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:90}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--primary);letter-spacing:.05em;text-transform:uppercase}
+.ncta{border:1px solid var(--primary);color:var(--primary);font-size:12px;font-weight:600;padding:10px 24px;border-radius:var(--rp);transition:all .3s;text-transform:uppercase;letter-spacing:0.1em}
+.ncta:hover{background:var(--primary);color:var(--white)}
+
+/* ── HERO ── */
+.hero{background:var(--bg);position:relative;overflow:hidden;padding:120px 24px 140px;text-align:center}
+.eyebrow{display:inline-block;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;margin-bottom:32px}
+.htitle{font-family:var(--serif);font-size:clamp(42px,8vw,86px);font-weight:300;color:var(--primary-dark);line-height:1;letter-spacing:-.01em;max-width:900px;margin:0 auto 28px}
+.htitle em{font-style:italic;color:var(--gold)}
+.hsub{font-size:20px;font-weight:300;color:var(--text-light);max-width:600px;margin:0 auto 56px;line-height:1.7}
+.btnp{background:var(--primary);color:var(--white);font-size:14px;font-weight:600;padding:22px 64px;border-radius:var(--rp);display:inline-block;transition:all .4s;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--primary)}
+.btnp:hover{background:transparent;color:var(--primary);transform:translateY(-2px)}
+.hstats{display:flex;justify-content:center;gap:60px;margin-top:80px;padding-top:60px;border-top:1px solid rgba(74,55,40,.08)}
+.hstat-n{font-family:var(--serif);font-size:42px;font-weight:300;color:var(--gold);line-height:1}
+.hstat-l{font-size:10px;color:var(--text-light);letter-spacing:.15em;text-transform:uppercase;margin-top:8px}
+
+/* ── GALLERY ── */
+.gallery{background:var(--bg-alt);padding:100px 0}
+.gal-label{text-align:center;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:48px}
+.gal-track{display:flex;gap:20px;padding:0 24px;overflow-x:auto;scrollbar-width:none;justify-content:center}
+.gcard{flex:0 0 auto;width:240px;height:320px;border-radius:var(--rp);overflow:hidden;position:relative}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;filter:sepia(20%)}
+.gcard:hover img{transform:scale(1.08);filter:sepia(0)}
+.gcard-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(to top,rgba(26,26,26,0.8) 0%,transparent 60%)}
+.gcard-t{font-family:var(--serif);font-size:20px;color:var(--white)}
+
+/* ── COMMON ── */
+.sec{padding:120px 24px}
+.sec-alt{background:var(--bg-alt)}
+.ctr{max-width:1100px;margin:0 auto}
+.tag{display:inline-block;color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px}
+.stitle{font-family:var(--serif);font-size:clamp(32px,6vw,56px);font-weight:300;color:var(--primary-dark);line-height:1.1;margin-bottom:20px}
+.ssub{font-size:18px;font-weight:300;color:var(--text-light);line-height:1.7;max-width:580px}
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+
+/* ── FOR WHOM ── */
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:64px}
+.fw-card{border-bottom:1px solid rgba(74,55,40,.1);padding:32px 0;display:flex;gap:20px;align-items:flex-start}
+.fw-chk{color:var(--gold);font-size:18px;font-family:var(--serif)}
+
+/* ── MODULES ── */
+.mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:80px}
+.mcard{background:var(--white);padding:48px;border:1px solid rgba(74,55,40,.05)}
+.mnum{font-family:var(--serif);font-size:14px;color:var(--gold);letter-spacing:0.3em;display:block;margin-bottom:24px}
+.mtitle{font-family:var(--serif);font-size:32px;color:var(--primary-dark);margin-bottom:24px}
+.mtopics{list-style:none}
+.mtopic{font-size:14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;color:var(--text-light)}
+.mtopic::before{content:'';width:4px;height:1px;background:var(--gold)}
+
+/* ── BONUS ── */
+.b-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px}
+.bcard{background:var(--bg-alt);padding:48px;text-align:center;border:1px solid rgba(184,134,11,.15)}
+.bbadge{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:block}
+
+/* ── TESTIMONIALS ── */
+.t-carousel-wrap{margin-top:80px}
+.tcard{flex:0 0 100%;padding:48px;background:var(--white);border:1px solid rgba(74,55,40,.05);text-align:center}
+@media(min-width:768px){.tcard{flex:0 0 calc(50% - 20px);margin-right:40px}}
+.tq{font-family:var(--serif);font-size:48px;color:var(--gold-light);opacity:0.3;line-height:1}
+.ttxt{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--primary);margin-bottom:32px}
+
+/* ── PRICING ── */
+.pcard{background:var(--white);border:1px solid rgba(74,55,40,.08);max-width:600px;margin:80px auto 0;padding:80px 60px;text-align:center}
+.pprice{font-family:var(--serif);font-size:96px;color:var(--primary-dark);line-height:1;margin-bottom:16px}
+.pinst{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:48px}
+
+/* ── EXPERT ── */
+.exp-layout{display:grid;grid-template-columns:350px 1fr;gap:80px;align-items:center;margin-top:80px}
+.exp-photo{aspect-ratio:3/4;filter:sepia(30%) contrast(1.1);border:1px solid var(--gold-light);padding:10px}
+.exp-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ── FAQ ── */
+.faq-wrap{margin-top:80px;max-width:800px;margin-left:auto;margin-right:auto}
+.fq{width:100%;padding:32px 0;border-bottom:1px solid rgba(74,55,40,.1);background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;text-align:left;font-family:var(--serif);font-size:22px;color:var(--primary-dark);display:flex;justify-content:space-between;align-items:center}
+.fa{max-height:0;overflow:hidden;transition:all .5s ease}
+.fi.open .fa{max-height:300px;padding:24px 0}
+
+@media(max-width:768px){
+  .mod-grid, .exp-layout, .b-grid{grid-template-columns:1fr;gap:40px}
+  .hstats{gap:30px;flex-wrap:wrap}
+  .sec{padding:80px 24px}
+  .pprice{font-size:64px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-inner"><div class="ticker-track">
+    <span class="ti"><span class="td"></span>Edição Limitada</span>
+    <span class="ti"><span class="td"></span>Valor Promocional por Tempo Limitado</span>
+    <span class="ti"><span class="td"></span>Acesso Vitalício Garantido</span>
+    <span class="ti"><span class="td"></span>Suporte Individual Especializado</span>
+    <span class="ti"><span class="td"></span>Edição Limitada</span>
+    <span class="ti"><span class="td"></span>Valor Promocional por Tempo Limitado</span>
+    <span class="ti"><span class="td"></span>Acesso Vitalício Garantido</span>
+    <span class="ti"><span class="td"></span>Suporte Individual Especializado</span>
+  </div></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-logo">Matheus Araújo</div>
+  <a href="#checkout" class="ncta">Adquirir Apostila</a>
+</nav>
+
+<section class="hero">
+  <div class="ctr">
+    <div class="fade">
+      <span class="eyebrow">A Arte da Confeitaria Delivery</span>
+      <h1 class="htitle">O Segredo das Fatias <em>Inesquecíveis</em></h1>
+      <p class="hsub">Domine o equilíbrio perfeito entre massa amanteigada e recheios estruturados com o método que transformou a confeitaria de mil alunas.</p>
+      <a href="#checkout" class="btnp">Garantir Meu Acesso</a>
+    </div>
+    <div class="hstats fade">
+      <div><span class="hstat-n">+1.000</span><span class="hstat-l">Alunas Formadas</span></div>
+      <div><span class="hstat-n">10 Anos</span><span class="hstat-l">de Experiência</span></div>
+      <div><span class="hstat-n">100%</span><span class="hstat-l">Digital & Vitalício</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gallery">
+  <p class="gal-label">Excelência em cada detalhe</p>
+  <div class="gal-track">
+    <div class="gcard"><img src="../ativos/imagens/hero-fatia-bolo.png" alt="1"><div class="gcard-in"><div class="gcard-t">Massa Perfeita</div></div></div>
+    <div class="gcard"><img src="../ativos/imagens/detalhe-massa.png" alt="2"><div class="gcard-in"><div class="gcard-t">Estrutura</div></div></div>
+    <div class="gcard"><img src="../ativos/imagens/fatia-ninho.png" alt="3"><div class="gcard-in"><div class="gcard-t">Cardápio</div></div></div>
+    <div class="gcard"><img src="../ativos/imagens/bonus-planilha.png" alt="4"><div class="gcard-in"><div class="gcard-t">Vendas</div></div></div>
+    <div class="gcard"><img src="../ativos/imagens/fatia-morango.png" alt="5"><div class="gcard-in"><div class="gcard-t">Sabor</div></div></div>
+  </div>
+</div>
+
+<section class="sec" id="para-quem">
+  <div class="ctr">
+    <div class="fade">
+      <span class="tag">Exclusividade</span>
+      <h2 class="stitle">Feito para quem busca <em>destaque</em></h2>
+      <p class="ssub">A apostila foi desenhada para profissionais que não aceitam o comum e desejam elevar o nível do seu delivery.</p>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-card fade"><span class="fw-chk">01.</span><p class="fw-txt">Você deseja dominar receitas que não apenas saciam, mas encantam e fidelizam o cliente.</p></div>
+      <div class="fw-card fade"><span class="fw-chk">02.</span><p class="fw-txt">Você busca segurança no transporte, garantindo que o bolo chegue impecável ao destino.</p></div>
+      <div class="fw-card fade"><span class="fw-chk">03.</span><p class="fw-txt">Você quer transformar sua paixão em um negócio lucrativo com margens profissionais.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="modulos">
+  <div class="ctr">
+    <div class="fade" style="text-align:center">
+      <span class="tag">Conteúdo Curado</span>
+      <h2 class="stitle">O Caminho da <em>Maestria</em></h2>
+    </div>
+    <div class="mod-grid">
+      <div class="mcard fade">
+        <span class="mnum">VOLUME I</span>
+        <h3 class="mtitle">A Base Amanteigada</h3>
+        <p class="mdesc">A ciência por trás da massa que suporta recheios densos sem perder a umidade e a leveza.</p>
+        <ul class="mtopics">
+          <li class="mtopic">Equilíbrio de gorduras</li>
+          <li class="mtopic">Técnica de batimento</li>
+          <li class="mtopic">Resfriamento técnico</li>
+        </ul>
+      </div>
+      <div class="mcard fade">
+        <span class="mnum">VOLUME II</span>
+        <h3 class="mtitle">Recheios de Luxo</h3>
+        <p class="mdesc">Cremosidade absoluta com estrutura de bico. O segredo visual e gustativo do sucesso.</p>
+        <ul class="mtopics">
+          <li class="mtopic">Ponto de recheio para fatias</li>
+          <li class="mtopic">Estabilização de ganaches</li>
+          <li class="mtopic">Combinações premium</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="bonus">
+  <div class="ctr">
+    <div class="fade">
+      <span class="tag">Complementos</span>
+      <h2 class="stitle">Benefícios <em>Adicionais</em></h2>
+    </div>
+    <div class="b-grid">
+      <div class="bcard fade">
+        <span class="bbadge">Bônus Especial I</span>
+        <h3 class="mtitle" style="font-size:24px">Gestão de Lucratividade</h3>
+        <p class="mdesc">Planilhas e estratégias para garantir que cada fatia vendida traga o retorno que você merece.</p>
+      </div>
+      <div class="bcard fade">
+        <span class="bbadge">Bônus Especial II</span>
+        <h3 class="mtitle" style="font-size:24px">Estética Fotográfica</h3>
+        <p class="mdesc">Como valorizar seu produto visualmente para vender mais através das redes sociais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="depoimentos">
+  <div class="ctr">
+    <div class="fade" style="text-align:center">
+      <h2 class="stitle">Relatos de <em>Transformação</em></h2>
+    </div>
+    <div class="t-carousel-wrap fade">
+      <div style="display:flex; overflow-x:auto; gap:30px; scrollbar-width:none">
+        <div class="tcard">
+          <div class="tq">“</div>
+          <p class="ttxt">Essa apostila mudou minha percepção sobre confeitaria profissional. Hoje vendo o dobro.</p>
+          <p style="font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:0.1em">Ana Carvalho</p>
+        </div>
+        <div class="tcard">
+          <div class="tq">“</div>
+          <p class="ttxt">A estrutura das fatias é impecável. O delivery chega perfeito sempre.</p>
+          <p style="font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:0.1em">Juliana Melo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="checkout">
+  <div class="ctr">
+    <div class="pcard fade">
+      <span class="eyebrow">Investimento</span>
+      <div class="pprice">R$ 39,90</div>
+      <p class="pinst">Pagamento único · Acesso Vitalício</p>
+      <a href="#" class="btnp">Garantir Meu Acesso Premium</a>
+      <p style="margin-top:32px; font-size:13px; color:var(--text-light)">Garantia incondicional de 7 dias para sua total satisfação.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="especialista">
+  <div class="ctr">
+    <div class="exp-layout">
+      <div class="exp-photo fade"><img src="../ativos/imagens/depoimento-2.png" alt="Matheus"></div>
+      <div class="fade">
+        <span class="tag">A Mente Criativa</span>
+        <h2 class="exp-name" style="font-family:var(--serif); font-size:48px; margin-bottom:24px">Matheus Araújo</h2>
+        <p class="exp-bio">Com uma década dedicada à excelência na confeitaria, Matheus Araújo consolidou um método que une sabor artesanal à logística industrial do delivery. Proprietário de uma das lojas mais elogiadas do ramo, ele agora compartilha a essência do seu sucesso com quem deseja profissionalizar sua paixão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="ctr">
+    <div class="fade" style="text-align:center"><h2 class="stitle">Perguntas <em>Frequentes</em></h2></div>
+    <div class="faq-wrap">
+      <div class="fi fade"><button class="fq">Como recebo o acesso?<span style="font-size:12px">▼</span></button><div class="fa"><p>Acesso imediato via e-mail após a confirmação do pagamento.</p></div></div>
+      <div class="fi fade"><button class="fq">A apostila é vitalícia?<span style="font-size:12px">▼</span></button><div class="fa"><p>Sim, você terá acesso ao material para sempre, incluindo atualizações futuras.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer style="padding:100px 24px; text-align:center; background:var(--dark); color:var(--white)">
+  <p style="font-family:var(--serif); font-size:24px; letter-spacing:0.1em; margin-bottom:20px">MATHEUS ARAÚJO</p>
+  <p style="font-size:12px; opacity:0.5; letter-spacing:0.05em">CONFEITARIA PROFISSIONAL · TODOS OS DIREITOS RESERVADOS 2026</p>
+</footer>
+
+<div class="sticky" id="sticky-cta">
+  <p class="sticky-txt">Adquira a Apostila por apenas <strong>R$ 39,90</strong></p>
+  <a href="#checkout" class="sbtn">Garantir Agora</a>
+</div>
+
+<script>
+const fadeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => fadeIO.observe(el));
+
+const sticky = document.getElementById('sticky-cta');
+const hero = document.querySelector('.hero');
+new IntersectionObserver(([e]) => sticky.classList.toggle('on', !e.isIntersecting), {threshold:0.1}).observe(hero);
+
+document.querySelectorAll('.fq').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.fi');
+    item.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>

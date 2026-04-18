@@ -1,26 +1,26 @@
-# 🎨 Modelos de Layouts Base (v2.1)
+# 🎨 Modelos de Layouts Base (v3.0 - Alta Fidelidade)
 
-Este repositório oferece 3 variações de **alto padrão**, mantendo a profundidade estrutural e comercial do projeto principal.
+Este repositório oferece agora 3 variações **profissionais**, reconstruídas para igualar a densidade comercial e estrutural do `index.html` principal.
 
 ---
 
 ## 1. 🏆 Premium Refinada (`variacoes/layout-01-elegante-premium.html`)
-- **Estratégia**: Foco em **Autoridade e Valor Percebido**.
-- **Perfil**: Ideal para clientes que buscam exclusividade e design minimalista de luxo.
-- **Diferencial**: Usa fontes serifadas clássicas, paleta tons de terra e dourado, com espaçamentos que remetem a grifes de alta gastronomia.
-- **Densidade**: Mantém todas as 14 seções do index original, mas com uma roupagem sofisticada.
+- **Foco**: Autoridade Inquestionável e Valor Percebido.
+- **Design**: Tipografia *Cormorant Garamond* (luxo), paleta "Earth & Gold", espaçamentos generosos e grid artístico.
+- **Estrutura**: Mantém as 14 seções, transformando cada bloco em uma peça de design minimalista de alta gastronomia.
+- **Ideal para**: Público exigente que busca exclusividade e sofisticação.
 
 ## 2. ⚡ Alta Conversão (`variacoes/layout-02-conversao-direta.html`)
-- **Estratégia**: Foco em **Urgência e Decisão Rápida**.
-- **Perfil**: Ideal para tráfego pago (Facebook/Instagram Ads) onde o impacto visual e a clareza do preço são cruciais.
-- **Diferencial**: Hierarquia agressiva, botões de destaque máximo, paleta de alto contraste e CTAs estrategicamente posicionados para mobile.
-- **Densidade**: Estrutura comercial enxuta, porém robusta, focada nos gatilhos de prova social e escassez.
+- **Foco**: Performance de Venda e Decisão Rápida.
+- **Design**: Alto contraste (Navy Blue & Orange), botões 3D com sombra de destaque, fontes Sans-serif bold e ritmo acelerado.
+- **Estrutura**: Reorganiza a hierarquia para destacar o preço e a garantia, sem remover os blocos de bônus e módulos que constroem a oferta.
+- **Ideal para**: Tráfego pago direto do Instagram/Facebook com foco em oferta irresistível.
 
 ## 3. 📖 Storytelling Forte (`variacoes/layout-03-editorial.html`)
-- **Estratégia**: Foco em **Conexão e Confiança**.
-- **Perfil**: Ideal para produtos que possuem um método único ou uma história de superação do especialista.
-- **Diferencial**: Formato editorial (estilo revista digital), foco na jornada de transformação e depoimentos integrados à narrativa.
-- **Densidade**: Transforma a venda em uma conversa, sem perder os blocos de oferta e fechamento.
+- **Foco**: Conexão Emocional e Jornada de Transformação.
+- **Design**: Estilo revista/editorial, paleta quente (Creme & Terracota), uso de Letra Capitular (dropcaps) e narrativa fluida.
+- **Estrutura**: Reordena a landing para contar a história do Matheus Araújo primeiro, integrando a oferta como a solução natural da jornada.
+- **Ideal para**: Construir confiança e educar o público sobre a superioridade do método.
 
 ---
-**Benchmark de Qualidade**: Todas as variações acima seguem o padrão técnico do `index.html` original.
+**Garantia de Qualidade**: Todas as variações foram auditadas e possuem Ticker, Sticky CTA, FAQ, Depoimentos e todas as seções vitais do projeto principal.

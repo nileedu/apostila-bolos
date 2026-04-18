@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story: Apostila Fatias de Bolos — Matheus Araújo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Jost:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --bg-alt:#FDF6EE;
+  --primary:#8B5E3C; --primary-dark:#6B4328;
+  --gold:#C8941F;
+  --dark:#2C1810; --text:#3D2B1F; --text-light:#7A5C4A;
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Jost',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden}
+
+/* ── STORYTELLING ── */
+.header{padding:120px 24px 60px;max-width:800px;margin:0 auto}
+.pre{color:var(--primary);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:14px;display:block;margin-bottom:24px}
+h1{font-family:var(--serif);font-size:clamp(40px,8vw,68px);line-height:1;color:var(--dark);font-weight:600}
+
+.story-section{padding:80px 24px;max-width:800px;margin:0 auto}
+.dropcap{float:left;font-family:var(--serif);font-size:90px;line-height:60px;padding-top:10px;padding-right:15px;color:var(--primary)}
+
+.img-frame{width:100%;height:500px;background:var(--bg-alt);margin:60px 0;padding:20px;border-radius:4px}
+.img-frame img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+
+.highlight-box{background:var(--bg-alt);padding:60px;margin:80px -100px;border-radius:4px;border-left:8px solid var(--primary);position:relative;z-index:2}
+@media(max-width:1000px){.highlight-box{margin:60px 0;padding:40px}}
+
+.stitle{font-family:var(--serif);font-size:42px;color:var(--dark);margin-bottom:30px}
+.btnp{display:inline-block;background:var(--primary);color:var(--white);padding:24px 60px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-decoration:none;margin-top:48px;transition:all .3s}
+.btnp:hover{background:var(--dark);transform:translateY(-3px)}
+
+.p-box{background:var(--dark);color:#FFFFFF;padding:100px 24px;text-align:center;margin-top:100px}
+.pprice{font-family:var(--serif);font-size:80px;color:var(--gold);margin:20px 0}
+
+.fade{opacity:0;transform:translateY(20px);transition:all .8s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span class="pre">O Método Revelado</span>
+  <h1 class="fade">Como um empresário da confeitaria transformou fatias simples em um faturamento recorrente.</h1>
+</div>
+
+<div class="story-section">
+  <p class="fade"><span class="dropcap">T</span>udo o que você vê hoje no mercado de bolos por fatia nasceu de uma necessidade real: como entregar um produto úmido, saboroso e que não desmorona no trajeto do motoboy? O Matheus Araújo passou anos testando cada proporção de manteiga e farinha até chegar ao que chamamos hoje de **Massa Amanteigada Perfeita**.</p>
+  
+  <div class="img-frame fade">
+    <img src="../ativos/imagens/hero-fatia-bolo.png" alt="Bolo">
+  </div>
+
+  <h2 class="stitle fade">Mais do que receitas, um sistema de vendas.</h2>
+  <p class="fade">A maioria das confeiteiras foca apenas no sabor. Mas para ter um negócio lucrativo, você precisa de estrutura. É por isso que o Módulo II desta apostila é dedicado exclusivamente ao **Recheio Estruturado** — o segredo para suas fatias ficarem em pé, lindas e apetitosas mesmo após horas na vitrine ou na caixa de entrega.</p>
+
+  <div class="highlight-box fade">
+    <h3 style="font-family:var(--serif);font-size:28px;margin-bottom:20px">"A qualidade das receitas é absurda pro preço. Já gastei muito mais em cursos que não entregaram nem metade disso."</h3>
+    <p>— Camila Santos, Aluna Formada</p>
+  </div>
+
+  <p class="fade">Ao adquirir este material, você está encurtando o caminho. Você não vai cometer os mesmos erros de quem está começando sozinha. Você vai direto para o que funciona, com o suporte de quem vive a confeitaria na prática todos os dias.</p>
+  
+  <div style="text-align:center">
+    <a href="#checkout" class="btnp fade">ACESSAR O MÉTODO COMPLETO</a>
+  </div>
+</div>
+
+<section class="p-box" id="checkout">
+  <div class="fade">
+    <h2 style="font-family:var(--serif);font-size:42px">Comece sua nova fase hoje.</h2>
+    <p style="opacity:0.6;margin-top:20px">Apostila Completa + 2 Bônus Exclusivos</p>
+    <div class="pprice">R$ 39,90</div>
+    <a href="#" class="btnp" style="background:var(--gold);color:var(--dark)">QUERO MEU ACESSO VITALÍCIO</a>
+  </div>
+</section>
+
+<footer style="padding:80px 24px;text-align:center;opacity:0.4;font-size:12px">
+  © 2026 MATHEUS ARAÚJO · STORYTELLING & IMPACTO
+</footer>
+
+<script>
+const fadeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => fadeIO.observe(el));
+</script>
+</body>
+</html>

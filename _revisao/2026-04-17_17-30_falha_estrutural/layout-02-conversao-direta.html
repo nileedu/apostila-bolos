@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oferta: Apostila Fatias de Bolos — Matheus Araújo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --bg-alt:#F4F7F9;
+  --primary:#002B45; --primary-light:#004A75;
+  --accent:#FF6D00; --accent-dark:#E65100;
+  --dark:#0A1929; --text:#1A2027; --text-light:#5F6B7A;
+  --white:#FFFFFF;
+  --sans:'Jost',system-ui,sans-serif;
+  --r:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── TICKER ── */
+.ticker{background:var(--accent);color:var(--white);padding:12px;font-weight:800;text-transform:uppercase;font-size:13px;text-align:center;letter-spacing:1px}
+
+/* ── STICKY CTA ── */
+.sticky{position:fixed;bottom:20px;left:20px;right:20px;background:var(--white);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:999;transform:translateY(150%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);border-radius:100px;box-shadow:0 12px 40px rgba(0,0,0,0.15);border:2px solid var(--accent)}
+.sticky.on{transform:translateY(0)}
+.sbtn{background:var(--accent);color:var(--white);font-size:14px;font-weight:800;padding:12px 32px;border-radius:100px;text-transform:uppercase}
+
+/* ── HERO ── */
+.hero{padding:80px 24px 100px;text-align:center;background:linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);color:var(--white);position:relative}
+.htitle{font-size:clamp(36px,9vw,72px);font-weight:900;line-height:1;margin-bottom:24px;text-transform:uppercase;letter-spacing:-2px}
+.htitle span{color:var(--accent)}
+.hsub{font-size:20px;font-weight:500;color:rgba(255,255,255,0.8);max-width:700px;margin:0 auto 48px}
+.btnp{background:var(--accent);color:var(--white);font-size:20px;font-weight:800;padding:24px 60px;border-radius:var(--r);display:inline-block;transition:all .2s;text-transform:uppercase;box-shadow:0 8px 0 var(--accent-dark)}
+.btnp:active{transform:translateY(4px);box-shadow:0 4px 0 var(--accent-dark)}
+
+/* ── STATS ── */
+.hstats{display:flex;justify-content:center;gap:40px;margin-top:60px;background:rgba(255,255,255,0.05);padding:30px;border-radius:var(--r)}
+.hstat-n{font-size:32px;font-weight:900;color:var(--accent);display:block}
+.hstat-l{font-size:12px;text-transform:uppercase;font-weight:700;opacity:0.7}
+
+/* ── SECTIONS ── */
+.sec{padding:100px 24px}
+.stitle{font-size:42px;font-weight:900;color:var(--primary);margin-bottom:40px;text-transform:uppercase;letter-spacing:-1px}
+.stitle em{color:var(--accent);font-style:normal}
+
+/* ── MODULES ── */
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.mcard{background:var(--white);padding:40px;border-radius:var(--r);border:2px solid var(--bg-alt);transition:border-color .3s}
+.mcard:hover{border-color:var(--accent)}
+.mnum{font-size:48px;font-weight:900;color:var(--bg-alt);line-height:1;margin-bottom:10px}
+.mtitle{font-size:24px;font-weight:800;color:var(--primary);margin-bottom:16px}
+
+/* ── PRICING ── */
+.price-box{background:var(--primary);color:var(--white);padding:80px 40px;border-radius:24px;text-align:center;max-width:800px;margin:0 auto}
+.p-old{font-size:24px;text-decoration:line-through;opacity:0.5}
+.pprice{font-size:100px;font-weight:900;color:var(--accent);line-height:1;margin:10px 0}
+
+.fade{opacity:0;transform:translateY(20px);transition:all .6s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:480px){
+  .sec{padding:60px 20px}
+  .pprice{font-size:70px}
+  .hstats{flex-direction:column;gap:20px}
+  .sticky{left:10px;right:10px;bottom:10px;padding:12px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">🚀 ÚLTIMAS VAGAS COM VALOR PROMOCIONAL - GARANTA JÁ A SUA!</div>
+
+<section class="hero">
+  <div class="fade">
+    <h1 class="htitle">FATIAS QUE <span>VENDEM</span></h1>
+    <p class="hsub">O método definitivo para faturar alto com bolos de delivery usando receitas profissionais testadas e aprovadas.</p>
+    <a href="#checkout" class="btnp">QUERO ACESSAR AGORA!</a>
+  </div>
+  <div class="hstats fade">
+    <div><span class="hstat-n">+1.000</span><span class="hstat-l">Alunas</span></div>
+    <div><span class="hstat-n">10 ANOS</span><span class="hstat-l">Mercado</span></div>
+    <div><span class="hstat-n">7 DIAS</span><span class="hstat-l">Garantia</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="ctr" style="max-width:1100px;margin:0 auto">
+    <div class="fade" style="text-align:center">
+      <h2 class="stitle">O QUE VOCÊ VAI <em>DOMINAR</em></h2>
+    </div>
+    <div class="mod-grid">
+      <div class="mcard fade">
+        <span class="mnum">01</span>
+        <h3 class="mtitle">MASSA AMANTEIGADA</h3>
+        <p>A base perfeita que não esfarela e suporta qualquer recheio.</p>
+      </div>
+      <div class="mcard fade">
+        <span class="mnum">02</span>
+        <h3 class="mtitle">RECHEIO ESTRUTURADO</h3>
+        <p>Cremosidade máxima com a estabilidade necessária para o delivery.</p>
+      </div>
+      <div class="mcard fade">
+        <span class="mnum">03</span>
+        <h3 class="mtitle">BÔNUS: FOTOS & CUSTOS</h3>
+        <p>Tudo o que você precisa para precificar e vender no Instagram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg-alt)">
+  <div class="ctr" style="max-width:900px;margin:0 auto;text-align:center">
+    <div class="fade">
+      <h2 class="stitle">QUEM JÁ <em>FATURA</em></h2>
+      <p style="font-size:24px;font-style:italic;color:var(--text-light)">"Minha clientela dobrou em dois meses. Agora não consigo dar conta dos pedidos!"</p>
+      <p style="margin-top:20px;font-weight:800">Ana Carvalho — São Paulo</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="checkout">
+  <div class="price-box fade">
+    <p class="p-old">DE R$ 97,00</p>
+    <p style="font-size:24px;font-weight:800;letter-spacing:2px">POR APENAS</p>
+    <div class="pprice">R$ 39,90</div>
+    <p style="font-weight:600;margin-bottom:40px;opacity:0.8">PAGAMENTO ÚNICO · ACESSO VITALÍCIO</p>
+    <a href="#" class="btnp" style="background:var(--white);color:var(--dark);box-shadow:0 8px 0 #cccccc">GARANTIR MINHA VAGA AGORA!</a>
+  </div>
+</section>
+
+<footer style="padding:60px 24px;text-align:center;background:var(--dark);color:var(--white)">
+  <h2 style="font-weight:900;margin-bottom:10px">MATHEUS ARAÚJO</h2>
+  <p style="opacity:0.5;font-size:12px">© 2026 CONFEITARIA DE ALTO IMPACTO</p>
+</footer>
+
+<div class="sticky" id="sticky-cta">
+  <p style="font-weight:800;color:var(--primary)">APENAS R$ 39,90</p>
+  <a href="#checkout" class="sbtn">COMPRAR AGORA</a>
+</div>
+
+<script>
+const fadeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => fadeIO.observe(el));
+
+const sticky = document.getElementById('sticky-cta');
+const hero = document.querySelector('.hero');
+new IntersectionObserver(([e]) => sticky.classList.toggle('on', !e.isIntersecting), {threshold:0.1}).observe(hero);
+</script>
+</body>
+</html>
