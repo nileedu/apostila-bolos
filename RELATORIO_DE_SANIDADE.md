@@ -7,7 +7,7 @@ Este documento certifica que o repositório **Apostila Bolos** passou por um aju
 ## 🔍 Inconsistências Corrigidas
 
 1. **Estrutura Física**:
-   - Remoção de pastas com nomes inválidos (ex: `ativo/ ;`).
+   - Remoção de pastas com nomes inválidos (ex: `ativo/ ;` foi corrigida para `ativos/`).
    - Padronização da pasta de ativos para `ativos/imagens/`.
    - Reorganização da pasta de documentação para `documentos/`.
 
