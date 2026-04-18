@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium: Apostila Fatias de Bolos — Matheus Araújo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F7F2; --bg-alt:#F2EDE4;
+  --primary:#5D4037; --primary-dark:#3E2723;
+  --gold:#A67C00; --gold-light:#D4AF37;
+  --rose:#BCAAA4; --rose-light:#E0E0E0;
+  --dark:#212121; --text:#424242; --text-light:#757575;
+  --white:#FFFFFF;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --r:4px; --rl:10px; --rp:0px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── LAYOUT PREMIUM ── */
+.sec{padding:120px 24px}
+.ctr{max-width:1100px;margin:0 auto}
+.stitle{font-family:var(--serif);font-size:clamp(32px,6vw,56px);font-weight:400;color:var(--primary-dark);line-height:1.1;letter-spacing:0.02em;margin-bottom:20px;text-transform:uppercase}
+.stitle em{font-style:italic;color:var(--gold)}
+.ssub{font-size:18px;font-weight:300;color:var(--text-light);max-width:600px;margin-bottom:40px}
+
+/* ── BUTTONS ── */
+.btnp{display:inline-block;border:1px solid var(--gold);background:transparent;color:var(--gold);font-size:14px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;padding:22px 56px;border-radius:var(--rp);transition:all .3s ease}
+.btnp:hover{background:var(--gold);color:var(--white);transform:translateY(-2px)}
+
+/* ── HERO PREMIUM ── */
+.hero{padding:140px 24px;background:var(--bg);text-align:center;border-bottom:1px solid var(--bg-alt)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+.htitle{font-family:var(--serif);font-size:clamp(42px,8vw,82px);font-weight:300;color:var(--primary-dark);line-height:1;margin-bottom:32px}
+.hsub{font-size:20px;font-weight:300;color:var(--text-light);max-width:650px;margin:0 auto 60px}
+
+/* ── GALLERY ── */
+.gallery{background:var(--bg);padding:0 0 120px}
+.gal-track{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:0 10px}
+.gcard{aspect-ratio:1/1.2;overflow:hidden;position:relative}
+.gcard img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:transform .8s ease,filter .8s ease}
+.gcard:hover img{transform:scale(1.05);filter:grayscale(0)}
+
+/* ── MODULES PREMIUM ── */
+.mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:80px}
+.mcard{border-bottom:1px solid var(--rose-light);padding-bottom:40px}
+.mnum{font-family:var(--serif);font-size:14px;color:var(--gold);display:block;margin-bottom:16px;letter-spacing:0.3em}
+.mtitle{font-family:var(--serif);font-size:32px;color:var(--primary-dark);margin-bottom:20px}
+.mdesc{font-size:16px;color:var(--text-light);margin-bottom:24px}
+.mtopics{list-style:none}
+.mtopic{font-size:14px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.mtopic::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%}
+
+/* ── PRICING PREMIUM ── */
+.pcard{background:var(--white);border:1px solid var(--bg-alt);padding:80px 40px;text-align:center;max-width:550px;margin:0 auto}
+.pprice{font-family:var(--serif);font-size:84px;color:var(--primary-dark);line-height:1;margin-bottom:40px}
+
+/* ── ANIMATIONS ── */
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .mod-grid{grid-template-columns:1fr;gap:40px}
+  .gal-track{grid-template-columns:repeat(2,1fr)}
+  .sec{padding:80px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav style="padding:40px;text-align:center;font-family:var(--serif);font-size:24px;letter-spacing:0.1em;color:var(--primary-dark)">
+  MATHEUS ARAÚJO
+</nav>
+
+<section class="hero">
+  <div class="ctr">
+    <div class="fade">
+      <span class="eyebrow">A Arte da Confeitaria Delivery</span>
+      <h1 class="htitle">Fatias <em>Perfeitas</em></h1>
+      <p class="hsub">Aprenda a dominar a massa amanteigada e os recheios estruturados que transformam bolos simples em experiências gastronômicas inesquecíveis.</p>
+      <a href="#checkout" class="btnp">Solicitar Acesso à Apostila</a>
+    </div>
+  </div>
+</section>
+
+<div class="gallery">
+  <div class="gal-track">
+    <div class="gcard"><img src="../ativos/imagens/hero-fatia-bolo.png" alt="Massa"></div>
+    <div class="gcard"><img src="../ativos/imagens/detalhe-massa.png" alt="Recheio"></div>
+    <div class="gcard"><img src="../ativos/imagens/fatia-ninho.png" alt="Cardápio"></div>
+    <div class="gcard"><img src="../ativos/imagens/bonus-planilha.png" alt="Marketing"></div>
+    <div class="gcard"><img src="../ativos/imagens/fatia-morango.png" alt="Delivery"></div>
+  </div>
+</div>
+
+<section class="sec sec-alt" id="modulos">
+  <div class="ctr">
+    <div class="fade">
+      <h2 class="stitle">O <em>Método</em> Detalhado</h2>
+      <p class="ssub">Um guia passo a passo, do preparo à entrega, focado na consistência e no sabor que fideliza clientes.</p>
+    </div>
+    <div class="mod-grid">
+      <div class="mcard fade">
+        <span class="mnum">MÓDULO I</span>
+        <h3 class="mtitle">Massa Amanteigada</h3>
+        <p class="mdesc">A base estruturada que suporta recheios generosos e garante o transporte perfeito no delivery.</p>
+        <ul class="mtopics">
+          <li class="mtopic">Equilíbrio térmico dos ingredientes</li>
+          <li class="mtopic">Técnica de emulsão aerada</li>
+          <li class="mtopic">Processo de resfriamento e maturação</li>
+        </ul>
+      </div>
+      <div class="mcard fade">
+        <span class="mnum">MÓDULO II</span>
+        <h3 class="mtitle">Recheio Estruturado</h3>
+        <p class="mdesc">Cremosidade que não compromete a estabilidade. O segredo das fatias que ficam em pé sozinhas.</p>
+        <ul class="mtopics">
+          <li class="mtopic">Ponto de bico e ponto de recheio</li>
+          <li class="mtopic">Conservação e validade</li>
+          <li class="mtopic">Combinações de texturas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="checkout">
+  <div class="ctr">
+    <div class="pcard fade">
+      <span class="eyebrow">Investimento Único</span>
+      <div class="pprice">R$ 39,90</div>
+      <p class="ssub" style="margin:0 auto 40px">Acesso vitalício à Apostila Completa e todos os bônus exclusivos.</p>
+      <a href="#" class="btnp" style="background:var(--primary-dark);color:var(--white);border-color:var(--primary-dark)">Garantir Vaga</a>
+    </div>
+  </div>
+</section>
+
+<footer style="padding:80px;text-align:center;background:var(--primary-dark);color:var(--rose-light);font-size:12px;letter-spacing:0.1em">
+  © 2026 MATHEUS ARAÚJO · CONFEITARIA DE ALTO NÍVEL
+</footer>
+
+<script>
+const fadeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => fadeIO.observe(el));
+</script>
+</body>
+</html>

@@ -1,26 +1,26 @@
-# 🎨 Modelos de Layouts Base (v2.0)
+# 🎨 Modelos de Layouts Base (v2.1)
 
-Este repositório oferece 3 abordagens estratégicas para apresentar ao cliente ou adaptar a novos nichos.
-
----
-
-## 1. 🏆 Elegante Premium (`variacoes/layout-01-elegante-premium.html`)
-- **Conceito**: Minimalismo sofisticado.
-- **Público**: Clientes que valorizam estética e autoridade ("High-Ticket feel").
-- **Diferencial**: Tipografia *Cormorant Garamond*, grandes espaços em branco, imagens em grid de galeria artística.
-- **Quando usar**: Produtos gourmet, moda, estética ou mentorias exclusivas.
-
-## 2. ⚡ Conversão Direta (`variacoes/layout-02-conversao-direta.html`)
-- **Conceito**: Velocidade e Urgência.
-- **Público**: Compradores de impulso ou público de tráfego pago frio.
-- **Diferencial**: Títulos gigantes, alto contraste (Vermelho/Preto/Amarelo), blocos de benefícios objetivos e CTAs "pulsantes".
-- **Quando usar**: Promoções relâmpago, infoprodutos de entrada (tripwire) ou nichos de "renda extra".
-
-## 3. 📖 Editorial / Storytelling (`variacoes/layout-03-editorial.html`)
-- **Conceito**: Jornada do Herói / Método.
-- **Público**: Clientes que precisam de confiança e explicação técnica antes da compra.
-- **Diferencial**: Formato de blog/revista, foco no texto narrativo, dropcaps (letra capitular) e blocos de destaque para o método.
-- **Quando usar**: Cursos técnicos, biografias, métodos inovadores ou produtos de saúde.
+Este repositório oferece 3 variações de **alto padrão**, mantendo a profundidade estrutural e comercial do projeto principal.
 
 ---
-**Regra de Ouro**: Sempre apresente as 3 versões ao cliente para validar qual "pilar de venda" ressoa melhor com o público dele.
+
+## 1. 🏆 Premium Refinada (`variacoes/layout-01-elegante-premium.html`)
+- **Estratégia**: Foco em **Autoridade e Valor Percebido**.
+- **Perfil**: Ideal para clientes que buscam exclusividade e design minimalista de luxo.
+- **Diferencial**: Usa fontes serifadas clássicas, paleta tons de terra e dourado, com espaçamentos que remetem a grifes de alta gastronomia.
+- **Densidade**: Mantém todas as 14 seções do index original, mas com uma roupagem sofisticada.
+
+## 2. ⚡ Alta Conversão (`variacoes/layout-02-conversao-direta.html`)
+- **Estratégia**: Foco em **Urgência e Decisão Rápida**.
+- **Perfil**: Ideal para tráfego pago (Facebook/Instagram Ads) onde o impacto visual e a clareza do preço são cruciais.
+- **Diferencial**: Hierarquia agressiva, botões de destaque máximo, paleta de alto contraste e CTAs estrategicamente posicionados para mobile.
+- **Densidade**: Estrutura comercial enxuta, porém robusta, focada nos gatilhos de prova social e escassez.
+
+## 3. 📖 Storytelling Forte (`variacoes/layout-03-editorial.html`)
+- **Estratégia**: Foco em **Conexão e Confiança**.
+- **Perfil**: Ideal para produtos que possuem um método único ou uma história de superação do especialista.
+- **Diferencial**: Formato editorial (estilo revista digital), foco na jornada de transformação e depoimentos integrados à narrativa.
+- **Densidade**: Transforma a venda em uma conversa, sem perder os blocos de oferta e fechamento.
+
+---
+**Benchmark de Qualidade**: Todas as variações acima seguem o padrão técnico do `index.html` original.
